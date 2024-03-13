@@ -1,1 +1,5 @@
-/Preliminary_Practices/memory_alloc
+# Ignore all files in the Preliminary_Practices directory
+/Preliminary_Practices/*
+
+# Except for .c files
+!Preliminary_Practices/*.c

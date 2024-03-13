@@ -46,5 +46,5 @@
 - frees memory allocated with malloc or calloc.
 - **Syntax**: 
     ```c
-    free(ptr)
+    free(ptr);
     ```
