@@ -79,3 +79,30 @@
     }
     ```
 
+## Applications
+- Stack may be used in the Conversion between prefix, infix and postfix Operations and Evaluation of these Expressions.
+- Expressions are Mathematical Statements consisting of **Operands** and **Operators**
+- Expression here are of three types.
+    1. Prefix:
+    - Expressions where Operator Preceedes two operands.
+    - example: 
+    ```
+    +-*$ABCD//EF+GH
+    ```
+    2. Infix
+    - Expressions where Operator is between two operands.
+    - example:
+    ```
+    A+B-C/D
+    ```
+    3. Postfix
+    - Expressions where Operator follows the two operands.
+    - example:
+    ```
+    ABC+*CBA-+*
+    ```
+
+- The uses cases are as follows
+    1. ### [Expression_Conversions](./Expression_Conversions.md)
+    2. ### [Expression_Evaluations](./Expression_Evaluation.md)
+
