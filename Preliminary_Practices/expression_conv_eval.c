@@ -6,13 +6,26 @@
 
 #define MAX_Length 50 // Maximum characters that may be processed
 
-int precedency(char); // Function Protyping
+int precedence(char); // Function Protyping
 
-void display(char stacks[MAX_Length], int length) {
+void display(char stacks[MAX_Length], int length, int rev) {
     printf("\n[RES] The Result is: ");
-    for (int i=0;i<length;i++) {
-        printf("%c", stacks[i]);
-    }
+    switch (rev)
+    {
+    case 0:
+        for (int i=0;i<length;i++) {
+            printf("%c", stacks[i]);
+        }
+        break;
+    case 1:
+        for (int i=length-1;i>=0;i--) {
+            printf("%c",stacks[i]);
+        }
+        break;
+    default:
+        printf("\n[ERR 01] (Internal) Unexpected value for rev state passed");
+        break;
+    } 
     printf("\n");
 }
 
@@ -27,23 +40,23 @@ void debug_stack(char Stack[MAX_Length],int length){
 */
 
 void InfixtoPostfix(){
-    int debugvar=0;
+    //int debugvar=0;
     char infix[MAX_Length], PostStack[MAX_Length], OpStack[MAX_Length];
-    int otos=-1,ptos=-1,len,length;
+    int otos=-1,ptos=-1,length;
     printf("Enter the Infix Word: ");
     scanf("%s",infix);
     length = strlen(infix);
-    len = length;
-    //printf("\n >[DEBUG] Variable length=%d, len=%d",length,len);
+    //printf("\n >[DEBUG] Variable length=%d",length);
     for (int i=0;i<=length;i++){
-        // printf("\n >[DEBUG] Array ran: %d with PostStack=", ++debugvar);
-        // debug_stack(PostStack,ptos+1);
-        // printf(" and OptStack=");
-        // debug_stack(OpStack,otos+1);
-        // printf(" | otos=%d and ptos=%d", otos,ptos);
+        /*
+        printf("\n >[DEBUG] Array ran: %d , len= %d with PostStack=", ++debugvar,length);
+        debug_stack(PostStack,ptos+1);
+        printf(" and OptStack=");
+        debug_stack(OpStack,otos+1);
+        printf(" | otos=%d and ptos=%d", otos,ptos);
+        */
         if (infix[i]=='(') { // starting open braces
             OpStack[++otos]=infix[i];
-            len++;
             //printf("\n >[DEBUG] Triggerd starting curly braces push to opstack\n");
         }
         else if(isalpha(infix[i])) { // alphabets
@@ -51,38 +64,70 @@ void InfixtoPostfix(){
             //printf("\n >[DEBUG] Triggered Alphabetic push to post\n");
         }
         else if(infix[i]==')') { 
-            len++;
             while (OpStack[otos]!='('){ // ending open braces
-                PostStack[++ptos] = OpStack[otos];
-                otos--;
+                PostStack[++ptos] = OpStack[otos--];
             }
-            otos--;
+            otos--; //to skip
             //printf("\n> [DEBUG] Triggerd ending curly braces push to opstack\n");
         }
         else {//Operators 
-            if (precedency(OpStack[otos])>=precedency(infix[i])){
-                PostStack[++ptos]=OpStack[otos--];
-                OpStack[++otos]=infix[i];
-            } else {
-                OpStack[++otos]=infix[i];
+            while (otos != -1 && precedence(OpStack[otos]) >= precedence(infix[i])) {
+                PostStack[++ptos] = OpStack[otos--];
             }
+            OpStack[++otos] = infix[i];
             //printf("\n >[DEBUG] Triggered operator push to post and opstack\n"); 
         }
     }
-
-    while (otos!=1){
+    while (otos!=-1){
         PostStack[++ptos]=OpStack[otos];
         otos--;
     }
-    display(PostStack,length);
+    display(PostStack,ptos,0);
 }
 
 void InfixtoPrefix(){
-    //todo
+    //int debugvar=0;
+    char infix[MAX_Length], PreStack[MAX_Length], OpStack[MAX_Length];
+    int otos=-1,ptos=-1, length;
+    printf("Enter the Infix word: ");
+    scanf("%s",infix);
+    //reverseString(infix); //strrev didn't work on linux becuase non standard 
+    length=strlen(infix);
+    for (int i=length;i>=0;i--) {
+        /*
+        printf("\n >[DEBUG] Array ran: %d , length= %d with PreStack=", ++debugvar,length);
+        debug_stack(PreStack,ptos+1);
+        printf(" and OptStack=");
+        debug_stack(OpStack,otos+1);
+        printf(" | otos=%d and ptos=%d", otos,ptos);
+        */
+        if(infix[i]==')') {
+            OpStack[++otos]=infix[i];
+        }
+        else if (isalpha(infix[i])){
+            PreStack[++ptos]=infix[i];
+        }
+        else if (infix[i]=='(') {
+            while (OpStack[otos]!=')') {
+                PreStack[++ptos]=OpStack[otos--];
+            }
+            otos--; //to discard '(' from OpStack
+        }
+        else {
+            while (otos != -1 && precedence(OpStack[otos]) > precedence(infix[i])) {
+                PreStack[++ptos] = OpStack[otos--];
+            }
+            OpStack[++otos] = infix[i];
+        }
+    }
+    while(otos!=-1) {
+        PreStack[++ptos]=OpStack[otos--];
+    }
+    display(PreStack,ptos,1);
 }
 
 void PostfixtoInfix() {
-    //todo
+    // todo
 }
 
 void PrefixtoInfix(){
@@ -101,7 +146,7 @@ void PostfixEval() {
     //todo
 }
 
-int precedency(char ch){
+int precedence(char ch){
     switch(ch) {
         case '$': // exponent
             return 4;
