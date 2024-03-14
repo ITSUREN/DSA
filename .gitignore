@@ -3,3 +3,5 @@
 
 # Except for .c files
 !Preliminary_Practices/*.c
+# Except for directories
+!Preliminary_Practices/*/ 
