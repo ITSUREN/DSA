@@ -2,7 +2,7 @@
 # Ignore all files in the Preliminary_Practices directory
 /Preliminary_Practices/*
 # Ignore Testing File
-Preliminary_Practices/tests.c
+/Tests/*
 
 ##########EXCEPTIONS##########
 # Except for .c files

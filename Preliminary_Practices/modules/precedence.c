@@ -1,5 +1,6 @@
 int precedence(char ch){
     switch(ch) {
+        case '^':
         case '$': // exponent
             return 4;
         case '*':
@@ -11,4 +12,8 @@ int precedence(char ch){
         default:
             return 1;
     }
+}
+
+int isOperator(char ch) {
+    return (ch == '^' || ch == '$' || ch == '*' || ch == '/' || ch == '+' || ch == '-');
 }
