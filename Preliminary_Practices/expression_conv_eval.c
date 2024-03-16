@@ -100,7 +100,35 @@ void InfixtoPrefix(){
 }
 
 void PostfixtoInfix() {
-    //todo
+    char postfix[MAX_Length],operand1[MAX_Length],operand2[MAX_Length],operator1[2],operand0[2],character;
+    int operandcount=0;
+
+    printf("Enter the Prefix Word: ");
+    scanf("%s",postfix);
+    for (int i=0;i<strlen(postfix);i++) {
+        character=postfix[i];
+        //printf("\n> [DEBUG run %d] Prefix=%s character=%c operand1=%s,operand2=%s,operator=%s, operandcount=%d trace:%s",i,prefix,character,operand1,operand2,operator1,operandcount,displaystringstack());
+          if (isalpha(character)) {
+            //printf("\n[Debug] Triggered is alpha");
+            operand0[0]=character; operand0[1]='\0';
+            PushOperand(operand0); 
+        }
+        else {
+            char Buffer[MAX_Length];
+            //printf("\n[Debug] Triggered operator buffer=%s",Buffer);
+            strcpy(operand2,PopOperand());
+            strcpy(operand1,PopOperand());
+            strcpy(Buffer,"(");
+            strcat(Buffer,operand1);
+            operator1[0]=character;operator1[1]='\0';
+            strcat(Buffer,operator1);
+            strcat(Buffer,operand2);
+            strcat(Buffer,")\0");
+            PushOperand(Buffer);
+            operandcount--;
+        }
+    }
+    printf("\n\n The Infix Expression is: %s\n",displaystringstack());
 }
 
 void PrefixtoInfix(){

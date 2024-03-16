@@ -152,3 +152,37 @@
     ```
 
 ## Postfix to Infix
+- follow the algorithm below:
+    1. Read the postfix expression from Left to Right.
+    ```c
+    for (int i=(strlen(postfix)-1);i>=0;i--) {
+    }
+    ```
+    2. Repeat till above condition is reached:
+        1. If scanned character is alphabet then Push to the Operand Stack 
+        ```c
+        if (isalpha(character)) {
+            operand0[0]=character; operand0[1]='\0';
+            PushOperand(operand0); 
+        }
+        ```
+        2. But if scanned character is an operator pop last two operands from the stack, add a symbol between it and push it back to the stack.
+        ```c
+        else {
+            char Buffer[MAX_Length];
+            strcpy(operand2,PopOperand());
+            strcpy(operand1,PopOperand());
+            strcpy(Buffer,"(");
+            strcat(Buffer,operand1);
+            operator1[0]=character;operator1[1]='\0';
+            strcat(Buffer,operator1);
+            strcat(Buffer,operand2);
+            strcat(Buffer,")\0");
+            PushOperand(Buffer);
+            operandcount--;
+        }
+        ```
+    3. Print the reverse of the output string.
+    ```c
+    printf("\n\n The Infix Expression is: %s\n",strreverse(displaystringstack()));
+    ```
