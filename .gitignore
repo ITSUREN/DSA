@@ -3,6 +3,8 @@
 /Preliminary_Practices/*
 # Ignore Testing File
 /Tests/*
+logfile.txt
+
 
 ##########EXCEPTIONS##########
 # Except for .c files

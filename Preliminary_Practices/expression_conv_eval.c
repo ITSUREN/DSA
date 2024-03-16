@@ -6,8 +6,10 @@
 #include "./modules/precedence.c"
 #include "./modules/debug_stack.c"
 #include "./modules/postfixtoinfix_logic.c"
+#include "./modules/Log.c"
+#include "./modules/stringfunc.c"
 
-#define MAX_Length 25 // Maximum characters that may be processed
+#define MAX_Length 50 // Maximum characters that may be processed
 
 void display(char stacks[MAX_Length], int length, int rev) {
     printf("\n[RES] The Result is: ");
@@ -109,16 +111,15 @@ void PrefixtoInfix(){
     scanf("%s",prefix);
     for (int i=(strlen(prefix)-1);i>=0;i--) {
         character=prefix[i];
-        printf("\n> [DEBUG run %d] Prefix=%s character=%c operand1=%s,operand2=%s,operator=%s, operandcount=%d trace:",i,prefix,character,operand1,operand2,operator1,operandcount);
-        displaystringstack();
-        if (isalpha(character)) {
-            printf("\n Triggered is alpha");
+        //printf("\n> [DEBUG run %d] Prefix=%s character=%c operand1=%s,operand2=%s,operator=%s, operandcount=%d trace:%s",i,prefix,character,operand1,operand2,operator1,operandcount,displaystringstack());
+          if (isalpha(character)) {
+            //printf("\n[Debug] Triggered is alpha");
             operand0[0]=character; operand0[1]='\0';
             PushOperand(operand0); 
         }
         else {
             char Buffer[MAX_Length];
-            printf("\n Triggered operator buffer=%s",Buffer);
+            //printf("\n[Debug] Triggered operator buffer=%s",Buffer);
             strcpy(operand2,PopOperand());
             strcpy(operand1,PopOperand());
             strcpy(Buffer,"(");
@@ -131,7 +132,7 @@ void PrefixtoInfix(){
             operandcount--;
         }
     }
-    displaystringstack();
+    printf("\n\n The Infix Expression is: %s\n",strreverse(displaystringstack()));
 }
 
 void PrefixEval() {

@@ -1,6 +1,6 @@
-#define MAX_Length 50
+#define MAX_Lengths 50
 
-void debug_stack(char Stack[MAX_Length],int length){
+void debug_stack(char Stack[MAX_Lengths],int length){
     printf("[ ");
     for (int i=0; i<length; i++){
         printf("%c,",Stack[i]);
@@ -8,7 +8,7 @@ void debug_stack(char Stack[MAX_Length],int length){
     printf("\b ]");
 }
 
-void debug_print(int *debugvar,int length, char PostStack[MAX_Length], int ptos, char OpStack[MAX_Length], int otos) {
+void debug_print(int *debugvar,int length, char PostStack[MAX_Lengths], int ptos, char OpStack[MAX_Lengths], int otos) {
     printf("\n >[DEBUG] Array ran: %2d , len= %d with PostStack=", ++(*debugvar),length);
     debug_stack(PostStack,ptos+1);
     printf(" and OpStack=");
