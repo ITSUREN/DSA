@@ -21,3 +21,17 @@ char* strreverse(char *strings) {
     }
     return reverse;
 }
+
+int powers(int base, int exponent) {
+    int result = 1.0;
+    if (exponent > 0) {
+        for (int i = 0; i < exponent; i++) {
+            result *= base;
+        }
+    } else if (exponent < 0) {
+        for (int i = 0; i > exponent; i--) {
+            result /= base;
+        }
+    }
+    return result;
+}

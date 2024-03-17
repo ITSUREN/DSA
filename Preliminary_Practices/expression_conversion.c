@@ -1,7 +1,6 @@
 #include "./modules/Conversion_Methods.c"
-#include "./modules/stringfunc.c"
 #include "./modules/precedence.c"
-#include "./modules/debug_stack.c"
+//#include "./modules/debug_stack.c"
 #define MAXLENGTH 50 // Maximum characters that may be processed
 
 void InfixtoPostfix(){

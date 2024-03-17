@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <math.h>
-#include <ctype.h>
 #include "./modules/Log.c"
+#include "./modules/c_functions_linux.c"
 #include "expression_conversion.c"
 #include "expression_evaluation.c"
 

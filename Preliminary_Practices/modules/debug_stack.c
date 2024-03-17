@@ -6,6 +6,14 @@ void debug_stack(char Stack[MAXLENGTH],int length){
         printf("%c,",Stack[i]);
     }
     printf("\b ]");
+} 
+
+void debug_stack_int(int Stack[MAXLENGTH],int length){
+    printf("[ ");
+    for (int i=0; i<length; i++){
+        printf("%d,",Stack[i]);
+    }
+    printf("\b ]");
 }
 
 void debug_print(int *debugvar,int length, char PostStack[MAXLENGTH], int ptos, char OpStack[MAXLENGTH], int otos) {
