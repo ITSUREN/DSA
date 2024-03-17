@@ -3,10 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include <ctype.h>
-#include "./modules/precedence.c"
-#include "./modules/debug_stack.c"
 #include "./modules/Log.c"
-#include "./modules/stringfunc.c"
 #include "expression_conversion.c"
 #include "expression_evaluation.c"
 
