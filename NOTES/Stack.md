@@ -1,5 +1,5 @@
 # Introduction
-- The [CODE](../Preliminary_Practices/stack.c).
+- The [CODE](../Data_Structures/stack.c).
 - A linear Data Structure.
 - Data may be inserted and deleted only of the top of the stack. 
 - LIFO [Last In First Out]
