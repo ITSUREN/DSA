@@ -60,7 +60,7 @@ while (otos!=1){
 }
 ```
 ### Code Details:
-- <span style="color:orange"> **Warning:**</span> Run the code from the [main code file](../Preliminary_Practices/expression_conv_eval.c) and not the below file.
+- <span style="color:orange"> **Warning:**</span> Run the code from the [main code file](../Preliminary_Practices/expression_operations.c) and not the below file.
 - **The Code: [Infix to Postfix Conversion](../Preliminary_Practices/expression_conversion.c#L4)**.
 - **Referenced Modules: [precedence](../Preliminary_Practices/modules/precedence.c)**, [debug_stack](../Preliminary_Practices/modules/stringfunc.c) (optional).
 ### Example:
@@ -123,7 +123,7 @@ while (otos!=1){
 }
 ```
 ### Code Details:
-- <span style="color:orange"> **Warning:**</span> Run the code from the [main code file](../Preliminary_Practices/expression_conv_eval.c) and not the below file.
+- <span style="color:orange"> **Warning:**</span> Run the code from the [main code file](../Preliminary_Practices/expression_operations.c) and not the below file.
 - **The Code: [Infix to Prefix Conversion](../Preliminary_Practices/expression_conversion.c#L38)**.
 - **Referenced Modules: [precedence](../Preliminary_Practices/modules/precedence.c)**, [debug_stack](../Preliminary_Practices/modules/stringfunc.c) (optional).
 ### Example:
@@ -211,7 +211,7 @@ for (int i=(strlen(postfix)-1);i>=0;i--) {
 printf("\n\n The Infix Expression is: %s\n",strreverse(displaystringstack()));
 ```
 ### Code Details:
-- <span style="color:orange"> **Warning:**</span> Run the code from the [main code file](../Preliminary_Practices/expression_conv_eval.c) and not the below file.
+- <span style="color:orange"> **Warning:**</span> Run the code from the [main code file](../Preliminary_Practices/expression_operations.c) and not the below file.
 - **The Code: [Postfix to Infix Conversion](../Preliminary_Practices/expression_conversion.c#L71)**.
 - **Referenced Modules: [Conversion_Methods](../Preliminary_Practices/modules/Conversion_Methods.c)**.
 ### Example:

@@ -31,7 +31,7 @@ for (int i=strlen(prefix); i>=0;i--) {
     ```
 3. Pop and display the result that remains in the Value Stack
 ### Code Details:
-- <span style="color:orange"> **Warning:**</span> Run the code from the [main code file](../Preliminary_Practices/expression_conv_eval.c) and not the below file.
+- <span style="color:orange"> **Warning:**</span> Run the code from the [main code file](../Preliminary_Practices/expression_operations.c) and not the below file.
 - **The Code: [Prefix Evaluation](../Preliminary_Practices/expression_evaluation.c#L4)**.
 - **Referenced Modules: [Evaluation_Methods](../Preliminary_Practices/modules/Evaluation_Methods.c)**, [debug_stack](../Preliminary_Practices/modules/stringfunc.c) (optional).
 ### Example:
@@ -77,7 +77,7 @@ while (!OStackisEmpty()) {
 ```
 4. Pop and display the result that remains in the Value Stack
 ### Code Details:
-- <span style="color:orange"> **Warning:**</span> Run the code from the [main code file](../Preliminary_Practices/expression_conv_eval.c) and not the below file.
+- <span style="color:orange"> **Warning:**</span> Run the code from the [main code file](../Preliminary_Practices/expression_operations.c) and not the below file.
 - **The Code: [Infix Evaluation](../Preliminary_Practices/expression_evaluation.c#L26)**.
 - **Referenced Modules: [Evaluation_Methods](../Preliminary_Practices/modules/Evaluation_Methods.c)**, [debug_stack](../Preliminary_Practices/modules/stringfunc.c) (optional), [Precedence](../Preliminary_Practices/modules/precedence.c).
 ### Example:
@@ -111,7 +111,7 @@ for (int i=0; i<=(strlen(postfix)-1);i++) {
     ```
 3. Pop and display the result that remains in the Value Stack
 ### Code Details:
-- <span style="color:orange"> **Warning:**</span> Run the code from the [main code file](../Preliminary_Practices/expression_conv_eval.c) and not the below file.
+- <span style="color:orange"> **Warning:**</span> Run the code from the [main code file](../Preliminary_Practices/expression_operations.c) and not the below file.
 - **The Code: [Postfix Evaluation](../Preliminary_Practices/expression_evaluation.c#L69)**.
 - **Referenced Modules: [Evaluation_Methods](../Preliminary_Practices/modules/Evaluation_Methods.c)**, [debug_stack](../Preliminary_Practices/modules/stringfunc.c) (optional).
 ### Example:
