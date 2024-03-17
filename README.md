@@ -28,6 +28,7 @@
 4. [Stack](./NOTES/Stack.md),[Queue](./NOTES/Queue.md) [etc](./NOTES/Miscellaneous.md)
 
 &nbsp;
+-----
 ### ❤️ Contributors
 
 Thanks for making this project possible:
