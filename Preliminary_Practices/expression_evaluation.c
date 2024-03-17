@@ -20,7 +20,7 @@ void PrefixEval() {
             pushv(EvaluateOperator(Operand1,character,Operand2));
         }
     }
-    displayresults();
+    displayresult();
 }
 
 void InfixEval() {
@@ -63,7 +63,7 @@ void InfixEval() {
         Operator=popo();
         pushv(EvaluateOperator(Operand1,Operator,Operand2));
     }
-    displayresults();
+    displayresult();
 }
 
 void PostfixEval() {
@@ -85,5 +85,5 @@ void PostfixEval() {
             pushv(EvaluateOperator(Operand1,character,Operand2));
         }
     }
-    displayresults();
+    displayresult();
 }
