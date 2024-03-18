@@ -1,77 +1,34 @@
-# Introduction
+# Introcdution
 - The [CODE](../Data_Structures/Queue.c).
-- A linear Data Structure.
-- Data may be inserted at the end of the Queue and Deleted from the front of the Queue.
-- FIFO [First In First Out]
+- linear data structure that follows 
+- First-In-First-Out (FIFO) principle
 
-## Checks Used
-1. **isFull** check:
-    - Checking if the Queue is in overflow condition. 
-    ```c
-    int isFull(LinearQueue *LQueue) {
-        return (LQueue->Rear == MAX_SIZE - 1);
-    }
-    ```
-2. **isEmpty** check: 
-    - Checking is the Queue is in underflow condition.
-    ```c
-    int isEmpty(LinearQueue *LQueue) {
-        return (LQueue->Rear < LQueue->Front);
-    }
-    ```
+## Key Characteristics of a Queue:
+- FIFO (First-In-First-Out): The element that is inserted first will be the first one to be removed.
+- Two Operations: Queues typically support two primary operations:
+    1. Enqueue: Adding an element to the end of the queue.
+    2. Dequeue: Removing an element from the front of the queue.
+- No Random Access: Unlike arrays, queues do not support random access to elements. You can only access the front and rear elements.
+- Sequential Storage: Elements are stored sequentially, with each element connected to its adjacent ones.
 
-## Methods Used
-1. **Initialize** **Queue**: 
-    - To set the Front and Rear values of the Queue.
-    ```c
-        void InitializeQueue(LinearQueue *LQueue) {
-        LQueue->Rear = -1;
-        LQueue->Front = 0;
-        printf("\n[Debug] Initialized at Rear: %d and Front: %d", LQueue->Rear, LQueue->Front);
-    }
-    ```
-2. **Enqueue**:
-    - To add elements to the Rear of the Stack.
-    ```c
-    void Enqueue(LinearQueue *LQueue) {
-        int Item;
-        printf("\nEnter the Value to be Pushed: ");
-        scanf("%d", &Item);
-        if (isFull(LQueue)) {
-            printf("\n[ERR 01] Queue is in Overflow Condition.");
-            exit(EXIT_FAILURE);
-        } else {
-            LQueue->Item[++(LQueue->Rear)] = Item;
-        }
-    }
-    ```
+## Operations on a Queue:
+1. Enqueue: Adds an element to the rear of the queue.
+2. Dequeue: Removes and returns the element from the front of the queue.
+3. Peek (or Front): Returns the element at the front of the queue without removing it.
+4. isEmpty: Checks if the queue is empty.
+5. isFull: Checks if the queue is full (applicable for fixed-size queues).
 
-3. **Dequeue**:
-    - To delete elements on top of the stack.
-    ```c
-    int Dequeue(LinearQueue *LQueue) {
-        if (isEmpty(LQueue)) {
-            printf("\n[ERR 02] Queue is in Underflow Condition");
-            exit(EXIT_FAILURE);
-        } else {
-            return LQueue->Item[(LQueue->Front)++];
-        }
-    }
-    ```
+## Types of Queues:
+1. ### [Linear Queue](./Linear_Queue.md): 
+- The simplest form of a queue where elements are arranged in a linear manner. It has a fixed size and follows the FIFO principle.
+2. ### [Circular Queue](./Circular_Queue.md) (Circular Buffer): 
+- A variation of the linear queue where the rear and front pointers wrap around the array when they reach the end, making efficient use of space.
+3. ### [Priority Queue](./Priority_Queue.md): 
+- A queue where elements have a priority associated with them, and elements with higher priority are dequeued first.
 
-4. **Display**:
-    - To display the elements in the stack.
-    ```c
-    int Peek(LinearQueue *LQueue, int index) {
-        return LQueue->Item[index];
-    }
-
-    void Display(LinearQueue *LQueue) {
-        printf("\n[DEBUG] printing with front and rear: %d and %d", LQueue->Front, LQueue->Rear);
-        printf("[ ");
-        for (int i = LQueue->Front; i <= LQueue->Rear; i++) {
-            printf("%d, ", Peek(LQueue, i)); // Using Peek function
-        }
-        printf("]");
-    }
-    ```
+## Applications of Queues:
+1. Job Scheduling: Queues are used in operating systems for task scheduling, managing jobs to be executed.
+2. Breadth-First Search (BFS): Queues are used to traverse graphs in a breadth-first manner.
+3. Printer Spooling: Queues are used to manage print jobs, ensuring they are printed in the order they were received.
+4. Resource Sharing: Queues can be used to manage access to shared resources, ensuring fair access to all users.
+5. Buffering: Queues are used in computer networking for buffering data packets, ensuring smooth transmission.
