@@ -4,25 +4,17 @@ typedef struct {
     int Item[MAX_SIZE];
     int Front;
     int Rear;
+    int Size;
 } LinearQueue;
 
-void InitializeQueue_Linear(LinearQueue *LQueue);
-int isFull_Linear(LinearQueue *LQueue);
-int isEmpty_Linear(LinearQueue *LQueue);
-void Enqueue_Linear(LinearQueue *LQueue);
-int Dequeue_Linear(LinearQueue *LQueue);
-int Peek_Linear(LinearQueue *LQueue, int index);
-void Display_Linear(LinearQueue *LQueue);
-void menu(LinearQueue *LQueue, int *choice);
-
-// didn't want to compile them and add them manually each time so methods declared below
-void InitializeQueue_Linear(LinearQueue *LQueue) {
+void InitializeQueue_Linear(LinearQueue *LQueue, int size) {
     LQueue->Rear = -1;
     LQueue->Front = 0;
+    LQueue->Size=size;
 }
 
 int isFull_Linear(LinearQueue *LQueue) {
-    return (LQueue->Rear == MAX_SIZE - 1);
+    return (LQueue->Rear == LQueue->Size - 1);
 }
 
 int isEmpty_Linear(LinearQueue *LQueue) {
@@ -85,9 +77,11 @@ void menu_LinearQueue(LinearQueue *LQueue, int *choice) {
 
 void LinearQueue_Interface() {
     LinearQueue LQueue;
-    int choice = 0;
+    int choice = 0,size;
 
-    InitializeQueue_Linear(&LQueue);
+    printf("Enter the size of the Queue: ");
+    scanf("%d",&size);
+    InitializeQueue_Linear(&LQueue,size);
 
     do {
         system("clear");
