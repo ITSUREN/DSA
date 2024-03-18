@@ -76,6 +76,7 @@ void menu_LinearQueue(LinearQueue *LQueue, int *choice) {
 }
 
 void LinearQueue_Interface() {
+    system("clear");
     LinearQueue LQueue;
     int choice = 0,size;
 

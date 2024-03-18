@@ -31,7 +31,7 @@
     }
     ```
 2. **Enqueue**:
-    - To add elements to the Rear of the Stack.
+    - To add elements to the Rear of the Queue.
     ```c
     void Enqueue(LinearQueue *LQueue) {
         int Item;
@@ -47,7 +47,7 @@
     ```
 
 3. **Dequeue**:
-    - To delete elements on top of the stack.
+    - To delete elements on top of the queue.
     ```c
     int Dequeue(LinearQueue *LQueue) {
         if (isEmpty(LQueue)) {
@@ -60,7 +60,7 @@
     ```
 
 4. **Display**:
-    - To display the elements in the stack.
+    - To display the elements in the queue.
     ```c
     int Peek(LinearQueue *LQueue, int index) {
         return LQueue->Item[index];
