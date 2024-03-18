@@ -1,7 +1,8 @@
 ###########IGNORES###########
 # Ignore all files in the Preliminary_Practices directory
 /Preliminary_Practices/*
-# Ignore Testing File
+/Data_Structures/*
+# Ignore Testing purpose Files
 /Tests/*
 logfile.txt
 
@@ -9,5 +10,7 @@ logfile.txt
 ##########EXCEPTIONS##########
 # Except for .c files
 !Preliminary_Practices/*.c
+!Data_Structures/*.c
 # Except for directories
 !Preliminary_Practices/*/ 
+!Data_Structures/*/ 
