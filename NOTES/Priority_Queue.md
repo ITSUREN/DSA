@@ -39,7 +39,7 @@ Where Dequeue operation deletes the largest value withing the Queue.
     ```
 
 ### 🛠️ Methods Used
-1. #### **Initialize** **Queue**: 
+1. #### **Initialize Queue**: 
     - To set the Front and Rear values of the Queue.
     ```c
         void InitializeQueue(PriorityQueue *PQueue) {

@@ -1,6 +1,7 @@
 # 📦 Stack
 - The [CODE:📑](../Data_Structures/stack.c).
 - A linear Data Structure.
+- A special type of [List](./List.md).
 - Data may be inserted and deleted only of the top of the stack. 
 - LIFO [Last In First Out]
 

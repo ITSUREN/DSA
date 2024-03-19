@@ -1,5 +1,6 @@
 # 🔁 Queue
 - The [CODE:📑](../Data_Structures/Queue.c).
+- A special type of [List](./List.md)
 - linear data structure that follows 
 - First-In-First-Out (FIFO) principle
 
