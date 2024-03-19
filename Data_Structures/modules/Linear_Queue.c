@@ -27,7 +27,7 @@ void Enqueue_Linear(LinearQueue *LQueue) {
     scanf("%d", &Item);
     if (isFull_Linear(LQueue)) {
         printf("\n[ERR 01] Queue is in Overflow Condition.");
-        exit(EXIT_FAILURE);
+        exit(1);//Exit Failure
     } else {
         printf("\nThe Enqueued Value is: %d", Item);
         LQueue->Item[++(LQueue->Rear)] = Item;
@@ -37,7 +37,7 @@ void Enqueue_Linear(LinearQueue *LQueue) {
 int Dequeue_Linear(LinearQueue *LQueue) {
     if (isEmpty_Linear(LQueue)) {
         printf("\n[ERR 02] Queue is in Underflow Condition");
-        exit(EXIT_FAILURE);
+        exit(1); //Exit Failure
     } else {
         printf("\nThe Dequeued Value is: %d", LQueue->Item[(LQueue->Front)]);
         return LQueue->Item[(LQueue->Front)++];
@@ -57,7 +57,7 @@ void Display_Linear(LinearQueue *LQueue) {
 }
 
 void menu_LinearQueue(LinearQueue *LQueue, int *choice) {
-    printf("\nMENU:\n\n1. Enqueue\n2. Dequeue\n3. Display\n\n=> ");
+    printf("\nMENU:Operations\n\n1. Enqueue\n2. Dequeue\n3. Display\n\n=> ");
     scanf("%d", choice);
     switch (*choice) {
         case 1:

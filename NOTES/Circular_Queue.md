@@ -4,15 +4,22 @@
 - Data may be inserted at the end of the Queue and Deleted from the front of the Queue.
 - FIFO [First In First Out]
 
+## Operations on a Circular Queue:
+1. [Enqueue](#enqueue): Adds an element to the rear of the queue.
+2. [Dequeue](#dequeue): Removes and returns the element from the front of the queue.
+3. [Peek](#peek) (or Front): Returns the element at the front of the queue without removing it.
+4. [isEmpty](#isempty-check): Checks if the queue is empty.
+5. [isFull](#isfull-check): Checks if the queue is full (applicable for fixed-size queues).
+
 ## Checks Used
-1. **isFull** check:
+1. #### **isFull** check:
     - Checking if the Queue is in overflow condition. 
     ```c
     int isFull_Circular(CircularQueue *CQueue) {
         return (CQueue->Front==0 && CQueue->Rear==CQueue->Size-1) || (CQueue->Front==CQueue->Rear+1);
     }
     ```
-2. **isEmpty** check: 
+2. #### **isEmpty** check: 
     - Checking is the Queue is in underflow condition.
     ```c
     int isEmpty_Circular(CircularQueue *CQueue) {
@@ -21,7 +28,7 @@
     ```
 
 ## Methods Used
-1. **Initialize** **Queue**: 
+1. #### **Initialize** **Queue**: 
     - To set the Front and Rear values of the Queue.
     ```c
     void InitializeQueue_Circular(CircularQueue *CQueue, int size) {
@@ -31,7 +38,7 @@
         return;
     }
     ```
-2. **Enqueue**:
+2. #### **Enqueue**:
 - To add elements to the Rear of the Queue.
     ```c
     void Enqueue_Circular(CircularQueue *CQueue) {
@@ -53,7 +60,7 @@
     }
     ```
 
-3. **Dequeue**:
+3. #### **Dequeue**:
     - To delete elements on top of the Queue.
     ```c
     int Dequeue_Circular(CircularQueue *CQueue) {
@@ -71,7 +78,7 @@
     }
     ```
 
-4. **Display**:
+4. #### **Display**:
     - To display the elements in the Queue.
     ```c
     void Display_Circular(CircularQueue *CQueue) {
@@ -91,5 +98,12 @@
             printf("%d,", Peek_Circular(CQueue, CQueue->Rear)); // Using Peek_Circular function
         }
         printf("\b ]");
+    }
+    ```
+5.  #### **Peek** 
+    - To display an item without changing the values of Front and Rear Variables.
+    ```c
+    int Peek_Circular(CircularQueue *CQueue, int index) {
+        return CQueue->Item[index];
     }
     ```

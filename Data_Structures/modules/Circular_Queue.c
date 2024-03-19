@@ -95,7 +95,7 @@ void Display_Circular(CircularQueue *CQueue) {
 }
 
 void menu_CircularQueue(CircularQueue *CQueue, int *choice) {
-    printf("\nMENU:\n\n1. Enqueue\n2. Dequeue\n3. Display\n\n=> ");
+    printf("\nMENU:Options\n\n1. Enqueue\n2. Dequeue\n3. Display\n\n=> ");
     scanf("%d", choice);
     switch (*choice) {
         case 1:
