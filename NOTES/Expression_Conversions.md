@@ -1,11 +1,13 @@
-# Introduction
+# 🔄 Expression Conversions
 - Converions Include:
-    1. [Infix_to_Postfix](#infix-to-postfix)
-    2. [Infix_to_Prefix](#infix-to-prefix)
-    3. [Prefix_to_Infix](#prefix-to-infix)
-    4. [Postfix_to_Infix](#postfix-to-infix)
+    1. **[Infix_to_Postfix](#1️⃣-infix-to-postfix)**
+    2. **[Infix_to_Prefix](#2️⃣-infix-to-prefix)**
+    3. **[Prefix_to_Infix](#3️⃣-prefix-to-infix)**
+    4. **[Postfix_to_Infix](#4️⃣-postfix-to-infix)**
 
-## Infix to Postfix
+&nbsp;
+# 🌿 Conversions
+## 1️⃣ Infix to Postfix
 ### Algorithm
 1. Start
 2. Scan one character at a time of an infix expression from left to Right (when infix word is given)
@@ -68,7 +70,7 @@ while (otos!=1){
 - **Output**: ABCD^*+EF+G-H*I^/J/
 
 
-## Infix to Prefix 
+## 2️⃣ Infix to Prefix 
 ### Algorithm
 1. Start
 2. Scan one character at a time of an infix expression from Right to Left (when infix word is given)
@@ -131,7 +133,7 @@ while (otos!=1){
 - **Output**: //+A*B$CD$*-+EFGHIJ
 
     
-## Prefix to Infix
+## 3️⃣ Prefix to Infix
 ### Algorithm
 1. Read the prefix expression from Right to Left.
 ```c
@@ -175,7 +177,7 @@ printf("\n\n The Infix Expression is: %s\n",strreverse(displaystringstack()));
 - **Output**: (((A+(B*(C^D)))/((((E+F)-G)*H)^I))/J)
 
 
-## Postfix to Infix
+## 4️⃣ Postfix to Infix
 ### Algorithm
 1. Read the postfix expression from Left to Right.
 ```c

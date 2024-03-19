@@ -1,10 +1,12 @@
-# Introduction
+# 🎲 Expression Evaluations
 - Converions Include:
-    1. [Prefix](#prefix-evaluations)
-    2. [Infix](#infix-evaluations)
-    3. [Postfix](#postfix-evaluations)
+    1. **[Prefix Evaluation](#1️⃣-prefix-evaluations)**
+    2. **[Infix Evaluation](#2️⃣-infix-evaluations)**
+    3. **[Postfix Evaluation](#3️⃣-postfix-evaluations)**
 
-## Prefix Evaluations
+&nbsp;
+# 🌿 Evaluations
+## 1️⃣ Prefix Evaluations
 ### Algorithm
 1. Scan one character from Right to Left.
 ```c
@@ -38,7 +40,7 @@ for (int i=strlen(prefix); i>=0;i--) {
 - **Input**: +A-/B$CD*E+F-/GHI where A=1, B=2.//3 2 1 5 9 3 2 
 - **Output**: "[RES] The result is: -5"
 
-## Infix Evaluations
+## 2️⃣ Infix Evaluations
 ### Algorithm
 1. Scan one character from Left to Right
 2. Repeat until the string is completely read:
@@ -84,7 +86,7 @@ while (!OStackisEmpty()) {
 - **Input**: (A+B)*C where A=10,//5 2
 - **Output**: "[RES] The result is: 30"
 
-## Postfix Evaluations
+## 3️⃣ Postfix Evaluations
 ### Algorithm
 1. Scan one character from Left to Right
 ```c

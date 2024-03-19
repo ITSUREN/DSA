@@ -1,11 +1,20 @@
-# Introduction
-- The [CODE](../Data_Structures/stack.c).
+# 📦 Stack
+- The [CODE:📑](../Data_Structures/stack.c).
 - A linear Data Structure.
 - Data may be inserted and deleted only of the top of the stack. 
 - LIFO [Last In First Out]
 
-## Checks Used
-1. **isFull** check:
+### 🔧 Operations on a Stack:
+1. [Push](#push): Adds an element to the top of the Stack.
+2. [Pop](#pop): Returns and deletes an item fromt eh top of the Stack.
+4. [isEmpty](#isempty-check): Checks if the queue is empty.
+5. [isFull](#isfull-check): Checks if the queue is full (applicable for fixed-size queues).
+6. [Traverse](#traverse): Displays the content of the Stack.
+
+&nbsp;
+# 🧩 **Operations**
+### ✔️ Checks Used
+1. #### **isFull** check:
     - Checking if the stack is in overflow condition. 
     ```c
     if ((Stacks->top) == (MAX_SIZE-1)) {
@@ -15,7 +24,7 @@
          return 0;
     }
     ```
-2. **isEmpty** check: 
+2. #### **isEmpty** check: 
     - Checking is the stack is in underflow condition.
     ```c
     if ((Stacks->top)==-1) {
@@ -26,15 +35,15 @@
     }
     ```
 
-## Methods Used
-1. **Initialize** **Stack**: 
+### 🛠️ Methods Used
+1. #### **Initialize** **Stack**: 
     - To set the Top of the stack to -1.
     ```c
     void InitializeStack(stack *Stacks){
         (Stacks->top)=-1;
     }
     ```
-2. **Push**:
+2. #### **Push**:
     - To add elements to the top of the stack.
     ```c
     void push(stack *Stacks) {
@@ -51,7 +60,7 @@
     }
     ```
 
-3. **Pop**:
+3. #### **Pop**:
     - To delete elements on top of the stack.
     ```c
     int pop(stack *Stacks) {
@@ -67,7 +76,7 @@
     }
     ```
 
-4. **Traverse**:
+4. #### **Traverse**:
     - To display the elements in the stack.
     ```c
     void traverse(stack *Stacks) {
@@ -79,30 +88,31 @@
     }
     ```
 
-## Applications
+&nbsp;
+# 🧰 Applications
 - Stack may be used in the Conversion between prefix, infix and postfix Operations and Evaluation of these Expressions.
 - Expressions are Mathematical Statements consisting of **Operands** and **Operators**
 - Expression here are of three types.
-    1. Prefix:
+    1. **Prefix**:
     - Expressions where Operator Preceedes two operands.
     - example: 
     ```
     +-*$ABCD//EF+GH
     ```
-    2. Infix
+    2. **Infix**:
     - Expressions where Operator is between two operands.
     - example:
     ```
     A+B-C/D
     ```
-    3. Postfix
+    3. **Postfix**:
     - Expressions where Operator follows the two operands.
     - example:
     ```
     ABC+*CBA-+*
     ```
 
-- The uses cases are as follows
+- The use cases are as follows
     1. ### [Expression_Conversions](./Expression_Conversions.md)
     2. ### [Expression_Evaluations](./Expression_Evaluation.md)
 

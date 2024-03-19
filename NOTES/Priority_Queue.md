@@ -1,16 +1,16 @@
-# Introduction
-- The [CODE](../Data_Structures/modules/Priority_Queue.c).
+# 🔁 Priority Queue
+- The [CODE:📑](../Data_Structures/modules/Priority_Queue.c).
 - A linear Data Structure.
 - Data may be inserted at the end of the Queue and Deleted from the front of the Queue.
 - FIFO [First In First Out]
 
-## Types of Priority Queue
+### 🌿 Types of Priority Queue
 1. **Ascending** Priority Queue: 
-    - Where Dequeue operation deletes the smallest value within the Queue.
+Where Dequeue operation deletes the smallest value within the Queue.
 2. **Descending** Priority Queue:
-    - Where Dequeue operation deletes the largest value withing the Queue.
+Where Dequeue operation deletes the largest value withing the Queue.
 
-## Operations on a Linear Queue:
+### 🔧 Operations on a Priority Queue:
 1. [Enqueue](#enqueue): Adds an element to the rear of the queue.
 2. [Dequeue](#dequeue): Removes and returns the element That is either the smallest or the largest depending on the type of Priority Queue.
 3. [Peek](#peek) (or Front): Returns the element at the front of the queue without removing it.
@@ -18,10 +18,11 @@
 5. [isFull](#isfull-check): Checks if the queue is full (applicable for fixed-size queues).
 6. [find_Maximum's_Position](#find-maximums-position): Find the maximum valued element's position in the queue.
 7. [find_Minimum's_Position](#find-minimums-position): Find the minimum valued element's positiong in the queue.
+8. [Display](#display): To show the elements of the Queue.
 
 &nbsp;
-
-## Checks Used
+# 🧩 **Operations**
+### ✔️ Checks Used
 1. #### **isFull** check:
     - Checking if the Queue is in overflow condition. 
     ```c
@@ -37,7 +38,7 @@
     }
     ```
 
-## Methods Used
+### 🛠️ Methods Used
 1. #### **Initialize** **Queue**: 
     - To set the Front and Rear values of the Queue.
     ```c
@@ -65,7 +66,7 @@
     ```
 
 3. #### **Dequeue**:
-    - To delete elements on top of the queue.
+    - To delete the smallest or the largest elements.
     ```c
     int Dequeue_Priority(PriorityQueue *PQueue, int type) {
         int index;

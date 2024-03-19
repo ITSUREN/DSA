@@ -1,19 +1,20 @@
-# Introduction
-- The [CODE](../Data_Structures/modules/Circular_Queue.c).
+# 🔁 Circular Queue
+- The [CODE:📑](../Data_Structures/modules/Circular_Queue.c).
 - Also called Ring Buffers.
 - Data may be inserted at the end of the Queue and Deleted from the front of the Queue.
 - FIFO [First In First Out]
 
-## Operations on a Circular Queue:
+### 🔧 Operations on a Circular Queue:
 1. [Enqueue](#enqueue): Adds an element to the rear of the queue.
 2. [Dequeue](#dequeue): Removes and returns the element from the front of the queue.
 3. [Peek](#peek) (or Front): Returns the element at the front of the queue without removing it.
 4. [isEmpty](#isempty-check): Checks if the queue is empty.
 5. [isFull](#isfull-check): Checks if the queue is full (applicable for fixed-size queues).
+6. [Display](#display): To show the elements of the Queue.
 
 &nbsp;
-
-## Checks Used
+# 🧩 **Operations**
+### ✔️ Checks Used
 1. #### **isFull** check:
     - Checking if the Queue is in overflow condition. 
     ```c
@@ -29,7 +30,7 @@
     }
     ```
 
-## Methods Used
+### 🛠️ Methods Used
 1. #### **Initialize** **Queue**: 
     - To set the Front and Rear values of the Queue.
     ```c
