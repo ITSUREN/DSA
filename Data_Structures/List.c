@@ -1,24 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
+//#include "./modules/Log.c"
+#include "./modules/c_functions_linux.c" //for getch
 
 #define MAXSIZE 30
-
 typedef struct{
     int Item[MAXSIZE];
     int Size;
 } List;
 
-void listFill(List *list) {
-    printf("\n Enter %d values for the list: ");
+void listFill(List *list, int ListIdentifier) {
+    printf("\n Enter %d values for the list %d: ",list->Size,ListIdentifier);
     for (int i=0;i<list->Size;i++) {
         scanf("%d",&list->Item[i]);
     }
 } 
 
-void InitializeList(List *list,int size) {
+void InitializeList_each(List *list,int size,int ListIdentifier) {
     list->Size=size;
-    listFill(list);
+    listFill(list,ListIdentifier);
+}
 
+void InitializeList(List *list,int numberofList) {
+    int size=0;
+    for (int i=0;i<numberofList;i++) {
+        system("clear");
+        printf("\n Enter the size of the list %d: ",i+1);
+        scanf("%d",&size);
+        InitializeList_each(&list[i],size,i+1);
+    }
 }
 
 int inRange(List list,int index){
@@ -86,29 +96,68 @@ void traverse(List list){
         printf("%d,",list.Item[i]);
     }
     printf("\b ]");
+    getch();
 }
 
-List *merging(List *list1, List *list2) {
-    //todo
-}
-
-void menu(List *list,int *choice) {
+void merge(List *list, int numberofLists) {
     system("clear");
-    printf("\nMenu:\n\n1. Insert\n2. Delete\n3. Modify\n4. Traverse\n\n=>");
+    int chosen[2], temp;
+    printf("\nMENU: Choose two lists among");
+    for (int i = 0; i < numberofLists; i++) {
+        printf("\n%d. List %d", i + 1, i + 1);
+    }
+    printf("\n\n=>");
+    for (int i = 0; i < 2; i++) {
+        scanf("%d", &temp);
+        chosen[i] = temp - 1;
+        //optional for exiting
+        if (temp==0) {
+            printf("\n[EXIT PROTOCOL] exiting program");
+            exit(EXIT_SUCCESS);
+        }
+    }
+    if ((list[chosen[0]].Size + list[chosen[1]].Size) > MAXSIZE) {
+        printf("\n [ERR 04] List size will exceed Maximum Allotted value. Aborting...\n");
+        exit(EXIT_FAILURE);
+    } else {
+        for (int i = 0; i < list[chosen[1]].Size; i++) {
+            list[chosen[0]].Item[list[chosen[0]].Size + i] = list[chosen[1]].Item[i];
+        }
+        list[chosen[0]].Size += list[chosen[1]].Size;
+    }
+}
+
+
+void menu(List *list,int *choice,int numberofLists) {
+    static int ListIdentifier=0;
+    system("clear");
+    printf("\nMenu:\n\n1. Insert\n2. Delete\n3. Modify\n4. Traverse\n5. Change List");
+    if (numberofLists>1) {
+        printf("\n6. Merge");
+    }
+    printf("\n\n=>");
+    
     scanf("%d",choice);
     switch(*choice) {
         case 1:
-            insertion(list);
+            insertion(&list[ListIdentifier]);
             break;
         case 2:
-            deletion(list);
+            deletion(&list[ListIdentifier]);
             break;
         case 3:
-            modify(list);
+            modify(&list[ListIdentifier]);
             break;
         case 4:
-            traverse(*list);
+            traverse(list[ListIdentifier]);
             break;
+        case 5:
+            ListIdentifier=(ListIdentifier+1)%numberofLists;
+            break;
+        case 6:
+            if (numberofLists>1) {
+                merge(list,numberofLists);
+            }
         default:
             printf("\n [ERR 01] Invalid Inputs\n");
             break;
@@ -116,13 +165,17 @@ void menu(List *list,int *choice) {
 }
 
 int main() {
-    List list;
-    int size,choice=0;
+    int choice=0, numberofLists;
+
+    system("clear"); 
+    printf("\n Enter the number of lists: ");
+    scanf("%d",&numberofLists);
+
+    List list[numberofLists];
+
     system("clear");
-    printf("\n Enter the size of the list: ");
-    scanf("%d",&size);
-    InitializeList(&list,size);
+    InitializeList(&list,numberofLists);
     do {
-        menu(&list,&choice);
+        menu(&list,&choice,numberofLists);
     } while (choice!=0);
 }

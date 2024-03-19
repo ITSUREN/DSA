@@ -35,3 +35,10 @@ int powers(int base, int exponent) {
     }
     return result;
 }
+
+char getch() {
+    char value;
+    scanf("%c",&value);
+    scanf("%c",&value);
+    return value;
+}
