@@ -25,7 +25,7 @@
 1. [Linked_List](./NOTES/Linked_List.md)
 2. [Tree](./NOTES/Tree.md)
 3. [Graph](./NOTES/Graph.md)
-4. [Stack](./NOTES/Stack.md), [Queue](./NOTES/Queue.md) [etc](./NOTES/Miscellaneous.md)
+4. [Stack](./NOTES/Stack.md), [Queue](./NOTES/Queue.md), [etc](./NOTES/Miscellaneous.md).
 
 &nbsp;
 -----
