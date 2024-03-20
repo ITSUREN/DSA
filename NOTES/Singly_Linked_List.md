@@ -2,11 +2,11 @@
 - The [CODE:📑](../Data_Structures/SinglyLinked_List.c).
 - Has only One Structural pointer
 
-### 🔧 Operations on a Priority Queue:
-1. Inserting Elements
-    - Inserting an Element at the Beginning
-    - Inserting an Element at the End
-    - Insserting an Element at a Specified position
+### 🔧 Operations on a Linked List:
+1. **[Inserting Elements](#insertions)**
+    - [Inserting an Element at the Beginning](#inserting-at-the-beginning)
+    - [Inserting an Element at the End](#inserting-at-the-end)
+    - [Insserting an Element at a Specified position](#inserting-at-a-position-intuitive)
 2. Deleting Elements
     - Deleting an Element at the Beginning
     - Deleting an Element at the End
@@ -14,7 +14,7 @@
 3. Counting number of Nodes
 4. Displaying Nodes
 5. Searching a Node
-6. Merging Liked List
+6. Merging Linked List
 
 &nbsp;
 # 🧩 **Operations**

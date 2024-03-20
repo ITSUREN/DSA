@@ -11,13 +11,13 @@
 4. **[Circular Doubly Linkded List](./Circular_Doubly_Linked_List.md)**
 
 ### 🔧 Operations on a Priority Queue:
-1. Inserting Elements
+1. **Inserting Elements**
     - Inserting an Element at the Beginning
     - Inserting an Element at the End
     - Insserting an Element at a Specified position
-2. Deleting Elements
+2. **Deleting Elements**
     - Deleting an Element at the Beginning
     - Deleting an Element at the End
     - Deleting an Element at ts Specified Position
-3. Searching a Node
-4. Merging Liked List
+3. **Searching a Node**
+4. **Merging Linked List**
