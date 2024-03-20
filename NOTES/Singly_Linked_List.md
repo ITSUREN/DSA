@@ -50,12 +50,12 @@
     ```c
     void DeleteEnd_logic() {
         Node *temp = First;
-        while (temp->Next->Next != NULL) { // Traverse to the second last node
+        while (temp->Next->Next != NULL) { 
             temp = temp->Next;
         }
-        free(temp->Next); // Free the last node
-        temp->Next = NULL; // Set the next pointer of second last node to NULL
-        Last = temp; // Update the Last pointer to point to the second last node
+        free(temp->Next);
+        temp->Next = NULL; 
+        Last = temp; 
     }
     ```
 
@@ -143,7 +143,7 @@
         Node *hold, *temp;
         if (isEmpty()) {
             printf("\n Void Deletion. No elements in the list.");
-        } else if (First->Next==NULL) { // First Node is the Last Node
+        } else if (First->Next==NULL) {
             free(First);
             First = NULL;
             Last = NULL;

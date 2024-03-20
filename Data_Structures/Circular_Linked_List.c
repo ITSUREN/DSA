@@ -31,29 +31,30 @@ int getPosix() {
 
 //LOGICS
 void FirstNode_logic(Node *NewNode) {
-    NewNode -> Next = NULL;
+    NewNode -> Next = NewNode;
     First = NewNode;
-    Last = NewNode;
+    Last = NewNode; //changed to point ot the first
+}
+
+void FirstNodeSwap_logic(Node *NewNode) {
+    NewNode->Next= First; //changed to point to the first
+    First = NewNode;
+    Last -> Next = NewNode; 
 }
 
 void LastNode_logic(Node *NewNode) {
-    NewNode -> Next = NULL;
+    NewNode -> Next = First; //changed to point to the first 
     Last -> Next = NewNode;
     Last = NewNode;
 }
 
-void FirstNodeSwap_logic(Node *NewNode) {
-    NewNode->Next= First;
-    First = NewNode;
-}
-
 void DeleteEnd_logic() {
     Node *temp = First;
-    while (temp->Next->Next != NULL) { // Traverse to the second last node
+    while (temp->Next->Next != First) { // Changed because there won't be null anymore
         temp = temp->Next;
     }
     free(temp->Next); // Free the last node
-    temp->Next = NULL; // Set the next pointer of second last node to NULL
+    temp->Next = First; // Set the next pointer of second last node to NULL
     Last = temp; // Update the Last pointer to point to the second last node
 }
 
@@ -66,9 +67,12 @@ int isEmpty() {
 int NodeCount() {
     Node *temp = First;
     int NodeCount=0;
-    while (temp!=NULL) {
-        NodeCount++;
-        temp = temp->Next;
+    if (!isEmpty()) {
+        NodeCount=1;
+        while (temp!=Last) {
+            NodeCount++;
+            temp = temp->Next;
+        }
     }
     return NodeCount;
 }
@@ -87,9 +91,12 @@ void  Display() {
     Node *temp = First;
 
     printf("[ ");
-    while (temp!=NULL) {
-        printf("%d,",temp->Item);
-        temp = temp->Next;
+    if (!isEmpty()) {
+        while (temp!=Last) {
+            printf("%d,",temp->Item);
+            temp = temp->Next;
+        }
+        printf("%d,",Last->Item);
     }
     printf("\b ]");
 }
@@ -109,7 +116,7 @@ void Search() {
         printf("\n List is empty Cannot Search.");
     } else {
         int Item=getItem();
-        for (int i=1;(temp!=NULL);i++) {
+        for (int i=0;i<NodeCount();i++) {
             if (temp->Item==Item) {
                 InitialPrint();
                 printf("%d,", i);
@@ -154,10 +161,10 @@ void Insert_Posix() {
     } else {
         Node * temp = First;
 
-        for (int i=1; (i<Posix-1)&&(temp->Next!=NULL);i++) {
+        for (int i=1; (i<Posix-1)&&(temp!=Last);i++) {
             temp = temp -> Next;
         }
-        if (temp-> Next == NULL) {
+        if (temp==Last) {
             LastNode_logic(NewNode);
         } else {
             NewNode -> Next = temp -> Next;
@@ -166,17 +173,20 @@ void Insert_Posix() {
     }
 }
 
+// Deletion
 void Delete_Beginning() {
     Node *hold;
     if(isEmpty()) {
         printf("\n Void Deletion. No elements in the list.");
-    } else {
+    } else if (First==Last){ //Only One Element
+        free(First);
+        First = NULL;
+        Last = NULL;
+    }else {
         hold = First;
         First=First->Next;
+        Last->Next=First; //Changed 
         free(hold);
-        if (First == NULL) {
-            Last = NULL;
-        }
     }
 }
 
@@ -184,7 +194,7 @@ void Delete_End() {
     Node *hold, *temp;
     if (isEmpty()) {
         printf("\n Void Deletion. No elements in the list.");
-    } else if (First->Next==NULL) { // First Node is the Last Node
+    } else if (First==Last) { // First Node is the Last Node
         free(First);
         First = NULL;
         Last = NULL;
@@ -203,10 +213,10 @@ void Delete_Posix() {
             Delete_Beginning();
         } else {
             Node *hold, *temp = First;
-            for (int i=1; (i<Posix-1)&&(temp->Next->Next!=NULL);i++){
+            for (int i=1; (i<Posix-1)&&(temp->Next!=Last);i++){
                 temp = temp -> Next;
             }
-            if (temp-> Next->Next == NULL) {
+            if (temp-> Next == Last) {
                 Delete_End();
             } else {
                 hold = temp->Next;
