@@ -47,6 +47,16 @@ void FirstNodeSwap_logic(Node *NewNode) {
     First = NewNode;
 }
 
+void DeleteEnd_logic() {
+    Node *temp = First;
+    while (temp->Next->Next != NULL) { // Traverse to the second last node
+        temp = temp->Next;
+    }
+    free(temp->Next); // Free the last node
+    temp->Next = NULL; // Set the next pointer of second last node to NULL
+    Last = temp; // Update the Last pointer to point to the second last node
+}
+
 //CHECKS
 int isEmpty() {
     return (First==NULL);
@@ -141,16 +151,6 @@ void Delete_Beginning() {
             Last = NULL;
         }
     }
-}
-
-void DeleteEnd_logic() {
-    Node *temp = First;
-    while (temp->Next->Next != NULL) { // Traverse to the second last node
-        temp = temp->Next;
-    }
-    free(temp->Next); // Free the last node
-    temp->Next = NULL; // Set the next pointer of second last node to NULL
-    Last = temp; // Update the Last pointer to point to the second last node
 }
 
 void Delete_End() {
