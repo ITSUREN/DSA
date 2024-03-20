@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "./modules/c_functions_linux.c"
 
 #define MAXSIZE 50
 
@@ -13,7 +14,8 @@ typedef struct Node_SL Node;
 Node *First=NULL;
 Node *Last=NULL;
 
-int  getItem() {
+// GETS
+int getItem() {
     int Item;
     printf("\nEnter the Element to Insert: ");
     scanf("%d", &Item);
@@ -22,11 +24,12 @@ int  getItem() {
 
 int getPosix() {
     int Posix;
-    printf("\nEnter the Position: ");;
+    printf("\nEnter the Position: ");
     scanf("%d",&Posix);
     return Posix;
 }
 
+//LOGICS
 void FirstNode_logic(Node *NewNode) {
     NewNode -> Next = NULL;
     First = NewNode;
@@ -35,19 +38,56 @@ void FirstNode_logic(Node *NewNode) {
 
 void LastNode_logic(Node *NewNode) {
     NewNode -> Next = NULL;
-    Last -> Next = NewNode; 
+    Last -> Next = NewNode;
     Last = NewNode;
 }
 
 void FirstNodeSwap_logic(Node *NewNode) {
-    NewNode->Next= First; // Point to Whichever Node the First pointer points to 
+    NewNode->Next= First;
     First = NewNode;
 }
 
+//CHECKS
+int isEmpty() {
+    return (First==NULL);
+}
+
+//Modules
+int NodeCount() {
+    Node *temp = First;
+    int NodeCount=0;
+    while (temp!=NULL) {
+        NodeCount++;
+        temp = temp->Next;
+    }
+    return NodeCount;
+}
+
+void DEBUG_lastnode() {
+    if (Last!=NULL) {
+        printf("\n The last node is %d", Last->Item);
+    } else {
+        printf("\n The last node is NULL");
+    }
+    getch();
+}
+
+void  Display() {
+    Node *temp = First;
+
+    printf("[ ");
+    while (temp!=NULL) {
+        printf("%d,",temp->Item);
+        temp = temp->Next;
+    }
+    printf("\b ]");
+}
+
+// INSERTION
 void Insert_Beginning(){
     Node *NewNode =(Node *)malloc(sizeof(Node));
-    NewNode->Item = getItem(); //get the Item
-    if (First==NULL) {
+    NewNode->Item = getItem();
+    if (isEmpty()) {
         FirstNode_logic(NewNode);
     } else {
         FirstNodeSwap_logic(NewNode);
@@ -58,7 +98,7 @@ void Insert_End() {
     int Item=getItem();
     Node *NewNode = (Node *)malloc(sizeof(Node));
     NewNode -> Item = Item;
-    if (First==NULL) {
+    if (isEmpty()) {
         FirstNode_logic(NewNode);
     } else {
         LastNode_logic(NewNode);
@@ -70,59 +110,87 @@ void Insert_Posix() {
     int Item = getItem();
     Node *NewNode = (Node *)malloc(sizeof(Node));
     NewNode -> Item = Item;
-    if ((First==NULL)) {
+    if (isEmpty()) {
         FirstNode_logic(NewNode);
-    } else if ((Posix==0)){
+    } else if ((Posix<=0)){
         FirstNodeSwap_logic(NewNode);
     } else {
-        Node * temp = First; //initially begin with the Fist Node 0
+        Node * temp = First;
 
-        // Reach to a Node Position one less than the passed Node n-1
         for (int i=1; (i<Posix-1)&&(temp->Next!=NULL);i++) {
-            temp = temp -> Next; // Move onto the next, stop at 2 lesser because temp will make it effectively 1 lesser
+            temp = temp -> Next;
         }
         if (temp-> Next == NULL) {
             LastNode_logic(NewNode);
         } else {
-            NewNode -> Next = temp -> Next; // The One that was in the position
-            temp -> Next = NewNode; // n-1 points to n(the NewNode)
+            NewNode -> Next = temp -> Next;
+            temp -> Next = NewNode;
         }
     }
 }
 
-int NodeCount() {
-    Node *temp = First;
-    int NodeCount=0;
-    while (temp!=NULL) {
-        NodeCount++;
-        temp = temp->Next;
-    } 
-    return NodeCount;
-}
-
-void  Display() {
-    Node *temp = First;
-    
-    printf("[ ");
-    while (temp!=NULL) {
-        printf("%d,",temp->Item);
-        temp = temp->Next;
-    } 
-    printf("\b ]");
-}
-
 void Delete_Beginning() {
-    //todo
+    Node *hold;
+    if(isEmpty()) {
+        printf("\n Void Deletion. No elements in the list.");
+    } else {
+        hold = First;
+        First=First->Next;
+        free(hold);
+        if (First == NULL) {
+            Last = NULL;
+        }
+    }
+}
+
+void DeleteEnd_logic() {
+    Node *temp = First;
+    while (temp->Next->Next != NULL) { // Traverse to the second last node
+        temp = temp->Next;
+    }
+    free(temp->Next); // Free the last node
+    temp->Next = NULL; // Set the next pointer of second last node to NULL
+    Last = temp; // Update the Last pointer to point to the second last node
 }
 
 void Delete_End() {
-    //todo
+    Node *hold, *temp;
+    if (isEmpty()) {
+        printf("\n Void Deletion. No elements in the list.");
+    } else if (First->Next==NULL) { // First Node is the Last Node
+        free(First);
+        First = NULL;
+        Last = NULL;
+        return;
+    } else {
+        DeleteEnd_logic();
+    }
 }
 
 void Delete_Posix() {
-    //todo
+    if(isEmpty()) {
+        printf("\n Void Deletion. No elements in the list");
+    } else {
+        int Posix=getPosix();
+        if ((Posix<=1)){
+            Delete_Beginning();
+        } else {
+            Node *hold, *temp = First;
+            for (int i=1; (i<Posix)&&(temp->Next->Next!=NULL);i++){
+                temp = temp -> Next;
+            }
+            if (temp-> Next->Next == NULL) {
+                Delete_End();
+            } else {
+                hold = temp->Next;
+                temp -> Next = hold->Next;
+                free(hold);
+            }
+        }
+    }
 }
 
+//MENUS SECTION
 void Deletion_Menu() {
     int choice=0;
     system("clear");
@@ -178,6 +246,9 @@ void Menu(int *choice) {
             system("clear");
             printf("\n The Items are: ");
             Display();
+            break;
+        case 4: //debug sake hidden
+            DEBUG_lastnode();
             break;
         default:
             printf("[ERR 01] Invalid Inputs.");
