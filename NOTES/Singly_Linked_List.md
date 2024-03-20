@@ -13,8 +13,8 @@
     - [Deleting an Element at ts Specified Position](#deletion-at-the-end)
 3. **[Counting number of Nodes](#node-count)**
 4. **[Displaying Nodes](#display)**
-5. Searching a Node
-6. Merging Linked List
+5. **[Searching a Node](#search)**
+6. Merging Linked List (WILL DO LATER)
 
 &nbsp;
 # 🧩 **Operations**
@@ -207,5 +207,33 @@
             temp = temp->Next;
         }
         printf("\b ]");
+    }
+    ```
+5. ### **Search**:
+    - To display the Nodes that contain the Element/Item.
+    ```c
+    void InitialPrint() {
+        static int alreadycalled=0;
+        if (!alreadycalled) {
+            printf("Elements Found at Nodes: ");
+            alreadycalled=1;
+        } 
+    }
+
+    void Search() {
+        Node *temp=First;
+        if (isEmpty()) {
+            printf("\n List is empty Cannot Search.");
+        } else {
+            int Item=getItem();
+            for (int i=1;(temp!=NULL);i++) {
+                if (temp->Item==Item) {
+                    InitialPrint();
+                    printf("%d,", i);
+                }
+                temp=temp->Next;
+            }
+            printf("\b  "); 
+        }
     }
     ```

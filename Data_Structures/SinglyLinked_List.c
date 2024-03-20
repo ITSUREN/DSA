@@ -17,7 +17,7 @@ Node *Last=NULL;
 // GETS
 int getItem() {
     int Item;
-    printf("\nEnter the Element to Insert: ");
+    printf("\nEnter the Element: ");
     scanf("%d", &Item);
     return Item;
 }
@@ -82,6 +82,7 @@ void DEBUG_lastnode() {
     getch();
 }
 
+// Displaying
 void  Display() {
     Node *temp = First;
 
@@ -91,6 +92,32 @@ void  Display() {
         temp = temp->Next;
     }
     printf("\b ]");
+}
+
+void InitialPrint() {
+    static int alreadycalled=0;
+    if (!alreadycalled) {
+        printf("Elements Found at Nodes: ");
+        alreadycalled=1;
+    } 
+}
+
+// Searching
+void Search() {
+    Node *temp=First;
+    if (isEmpty()) {
+        printf("\n List is empty Cannot Search.");
+    } else {
+        int Item=getItem();
+        for (int i=1;(temp!=NULL);i++) {
+            if (temp->Item==Item) {
+                InitialPrint();
+                printf("%d,", i);
+            }
+            temp=temp->Next;
+        }
+        printf("\b  "); 
+    }
 }
 
 // INSERTION
@@ -233,7 +260,7 @@ void Insertion_Menu() {
 
 void Menu(int *choice) {
     system("clear");
-    printf("\nMENU: Current Node Count: %d\n\n1. Insertion\n2. Deletion\n3. Display\n\n=>",NodeCount());
+    printf("\nMENU: Current Node Count: %d\n\n1. Insertion\n2. Deletion\n3. Display\n4. Search\n\n=>",NodeCount());
     scanf("%d",choice);
     switch(*choice) {
         case 1:
@@ -247,7 +274,10 @@ void Menu(int *choice) {
             printf("\n The Items are: ");
             Display();
             break;
-        case 4: //debug sake hidden
+        case 4:
+            Search();
+            break;
+        case 7: //debug sake hidden
             DEBUG_lastnode();
             break;
         default:
