@@ -68,7 +68,7 @@
      void Insert_Beginning(){
         Node *NewNode =(Node *)malloc(sizeof(Node));
         NewNode->Item = getItem(); //get the Item
-        if (First==NULL) {
+        if (isEmpty()) {
             FirstNode_logic(NewNode);
         } else {
             FirstNodeSwap_logic(NewNode);
@@ -82,7 +82,7 @@
         int Item=getItem();
         Node *NewNode = (Node *)malloc(sizeof(Node));
         NewNode -> Item = Item;
-        if (First==NULL) {
+        if (isEmpty()) {
             FirstNode_logic(NewNode);
         } else {
             LastNode_logic(NewNode);
@@ -98,7 +98,7 @@
         int Item = getItem();
         Node *NewNode = (Node *)malloc(sizeof(Node));
         NewNode -> Item = Item;
-        if ((First==NULL)) {
+        if (isEmpty()) {
             FirstNode_logic(NewNode);
         } else if ((Posix==0)){
             FirstNodeSwap_logic(NewNode);
