@@ -21,3 +21,9 @@
     - Deleting an Element at ts Specified Position
 3. **Searching a Node**
 4. **Merging Linked List**
+
+&nbsp;
+# 🧰 Applications
+- For Building Other Data Structures
+    1. ### [Stack](./Stack.md)
+    2. ### [Queue](./Queue.md)
