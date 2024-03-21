@@ -2,7 +2,7 @@
 - The [CODE:📑](../Data_Structures/modules/Priority_Queue.c).
 - A linear Data Structure.
 - Data may be inserted at the end of the Queue and Deleted from the front of the Queue.
-- FIFO [First In First Out]
+- FIFO [First In First Out].
 
 ### 🌿 Types of Priority Queue
 1. **Ascending** Priority Queue: 
@@ -11,9 +11,9 @@ Where Dequeue operation deletes the smallest value within the Queue.
 Where Dequeue operation deletes the largest value withing the Queue.
 
 ### 🔧 Operations on a Priority Queue:
-1. [Enqueue](#enqueue): Adds an element to the rear of the queue.
-2. [Dequeue](#dequeue): Removes and returns the element That is either the smallest or the largest depending on the type of Priority Queue.
-3. [Peek](#peek) (or Front): Returns the element at the front of the queue without removing it.
+1. [Enqueue](#enqueue): Adds an element to the rear of the priority queue.
+2. [Dequeue](#dequeue): Removes and returns the element That is either the smallest or the largest depending on the type of priority Queue.
+3. [Peek](#peek) (or Front): Returns the element at the front of the priority queue without removing it.
 4. [isEmpty](#isempty-check): Checks if the queue is empty.
 5. [isFull](#isfull-check): Checks if the queue is full (applicable for fixed-size queues).
 6. [find_Maximum's_Position](#find-maximums-position): Find the maximum valued element's position in the queue.

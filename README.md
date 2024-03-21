@@ -40,7 +40,7 @@ Thanks for making this project possible:
 
 ### 📜 License
 
-Get Closest is released under the [MIT license](./LICENSE), which grants the following permissions:
+DSA is released under the [MIT license](./LICENSE), which grants the following permissions:
 
 - Commercial use
 - Distribution

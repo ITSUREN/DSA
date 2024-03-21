@@ -9,14 +9,14 @@
 2. **[Deletion](#deletion)**: Removes and element from a position in the List.
 3. **[Modification](#deletion)**: Change the Value of an element in certain position in the List.
 4. **[inRange](#in-range-check)**: Checks if the list is empty.
-5. **[Traversing](#traversing)**: Displays the elements in the list
-6. **[Merging](#merging)**: Mergest Two Lists
+5. **[Traversing](#traversing)**: Displays the elements in the list.
+6. **[Merging](#merging)**: Merges Two Lists.
 
 &nbsp;
 # 🧩 **Operations**
 ### ✔️ Checks Used
 1. #### **In Range** check:
-- checks whether the Index is withing the size of the list.
+- Checks whether the Index is within the size of the list.
 ```c
 int inRange(List list,int index){
     return ((index>=0) && (index<list.Size));

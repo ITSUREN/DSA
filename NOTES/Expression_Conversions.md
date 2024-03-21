@@ -1,5 +1,5 @@
 # 🔄 Expression Conversions
-- Converions Include:
+- Conversions Include:
     1. **[Infix_to_Postfix](#1️⃣-infix-to-postfix)**
     2. **[Infix_to_Prefix](#2️⃣-infix-to-prefix)**
     3. **[Prefix_to_Infix](#3️⃣-prefix-to-infix)**
@@ -10,7 +10,7 @@
 ## 1️⃣ Infix to Postfix
 ### Algorithm
 1. Start
-2. Scan one character at a time of an infix expression from left to Right (when infix word is given)
+2. Scan one character at a time of an infix expression from left to Right. (when infix word is given)
 ```c
     for (int i=0;i<=length;i++){
     printf("%c",infix[i]);
@@ -45,7 +45,7 @@ int otos=-1,ptos=-1;
         otos--;
     }
     ```
-    - if scanned character is an operator and the last operator in the OpStack has higher precedence than the character then push the top Operator of OpStack to Postfix Stack and replace the top Operand of Opstack with the operator else just push to OpStack, repeat to resolve the precedence:
+    - If the scanned character is an operator and the last operator in the OpStack has higher precedence than the character then: push the top Operator of OpStack to Postfix Stack, and replace the top Operand of Opstack with the operator else just push to OpStack, repeat to resolve the precedence:
     ```c
     else {
         while (otos != -1 && precedence(OpStack[otos]) >= precedence(infix[i])) {
@@ -72,8 +72,8 @@ while (otos!=1){
 
 ## 2️⃣ Infix to Prefix 
 ### Algorithm
-1. Start
-2. Scan one character at a time of an infix expression from Right to Left (when infix word is given)
+1. Start.
+2. Scan one character at a time of an infix expression from Right to Left. (when infix word is given)
 ```c
     for (int i=0;i<=length;i++){
     printf("%c",infix[i]);
@@ -108,7 +108,7 @@ int otos=-1,ptos=-1;
         otos--;
     }
     ```
-    - if scanned character is an operator and the last operator in the OpStack has higher precedence than the character then push the top Operator of OpStack to Prefix Stack and replace the top Operand of Opstack with the operator else just push to OpStack, repeat to resolve the precedence:
+    - If the scanned character is an operator and the last operator in the OpStack has higher precedence than the character then, push the top Operator of OpStack to Prefix Stack, and replace the top Operand of Opstack with the operator else just push to OpStack, repeat to resolve the precedence:
     ```c
     else {
         while (otos != -1 && precedence(OpStack[otos]) >= precedence(infix[i])) {
@@ -141,7 +141,7 @@ for (int i=(strlen(prefix)-1);i>=0;i--) {
 }
 ```
 2. Repeat till above condition is reached:
-    1. If scanned character is alphabet then Push to the Operand Stack 
+    1. If scanned character is alphabet then Push to the Operand Stack.
     ```c
     if (isalpha(character)) {
         operand0[0]=character; operand0[1]='\0';
@@ -185,7 +185,7 @@ for (int i=(strlen(postfix)-1);i>=0;i--) {
 }
 ```
 2. Repeat till above condition is reached:
-    1. If scanned character is alphabet then Push to the Operand Stack 
+    1. If scanned character is alphabet then Push to the Operand Stack. 
     ```c
     if (isalpha(character)) {
         operand0[0]=character; operand0[1]='\0';

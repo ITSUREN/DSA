@@ -3,4 +3,4 @@
 
 ### 🌿 Contents:
 1. **[Recursion](./Miscellaneous/Recursion.md)** (under Work):
-Process by which a function calls itself repeatedly until some specified conditions are met.
+Process by which a function calls itself repeatedly until some specified condition is met.

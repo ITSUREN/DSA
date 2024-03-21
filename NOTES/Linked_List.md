@@ -18,12 +18,12 @@
 2. **Deleting Elements**
     - Deleting an Element at the Beginning
     - Deleting an Element at the End
-    - Deleting an Element at ts Specified Position
+    - Deleting an Element at a Specified Position
 3. **Searching a Node**
 4. **Merging Linked List**
 
 &nbsp;
 # 🧰 Applications
-- For Building Other Data Structures
+- For Building Other Data Structures:
     1. ### [Stack](./Stack.md)
     2. ### [Queue](./Queue.md)

@@ -1,6 +1,6 @@
 # 🔗 Singly Linked List
 - The [CODE:📑](../Data_Structures/SinglyLinked_List.c).
-- Has only One Structural pointer
+- Has only One Structural pointer.
 
 ### 🔧 Operations on a Linked List:
 1. **[Inserting Elements](#insertions)**
@@ -29,7 +29,7 @@
     }
     ```
 2. #### **First Node Swap** Logic:
-    - Logic used when the first node already exist be writing must be done.
+    - Logic used when the first node already exist but writing must be done.
     ```c
     void FirstNodeSwap_logic(Node *NewNode) {
         NewNode->Next= First; 
@@ -46,7 +46,7 @@
     }
     ```
 4. #### **Delete Last** Logic:
-    - To delete the last Nodes of the Linked List.
+    - To delete the last Node of the Linked List.
     ```c
     void DeleteEnd_logic() {
         Node *temp = First;
@@ -61,7 +61,7 @@
 
 ## 🛠️ Methods Used
 1. ### **Insertions**: 
-- To Insert nodes to the Linked List.
+- To insert nodes to the Linked List.
      1. #### Inserting at the beginning
      - To insert at the Beginning of the Linked List.
      ```c
@@ -90,8 +90,8 @@
     }
     ```
     3. #### Inserting at a Position (INTUITIVE)
-    - Insert anywhere in the List
-    - Will Resolve in cases of Beginning and Ending Insertion inferred throgh Posix
+    - Insert anywhere in the List.
+    - Will Resolve in cases of Beginning and Ending Insertion inferred through Posix.
     ```c
     void Insert_Posix() {
         int Posix = getPosix();
@@ -154,8 +154,8 @@
     }
     ```
     3. #### Deletion at a Position (INTUITIVE)
-    - Delete anywhere in the List
-    - Will Resolve in cases of Beginning and Ending detetion inferred throgh Posix
+    - Delete anywhere in the List.
+    - Will Resolve in cases of Beginning and Ending deletion inferred through Posix.
     ```c
     void Delete_Posix() {
         if(isEmpty()) {

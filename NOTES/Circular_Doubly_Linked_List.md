@@ -1,8 +1,8 @@
 # 🔗 Circular Doubly Linked List
 - The [CODE:📑](../Data_Structures/Circular_DoublyLinked_List.c).
-- Has Two Structural pointers: Previous and Next.
-- The Last Node is Connected to the First Node 
-- Every Node is accessible due to a closed nature
+- Has two Structural pointers: Previous and Next.
+- The Last Node is Connected to the First Node.
+- Every Node is accessible due to a closed nature.
 
 ### 🔧 Operations on a Circular Doubly Linked List:
 1. **[Inserting Elements](#insertions)**
@@ -99,8 +99,8 @@
     }
     ```
     3. #### Inserting at a Position (INTUITIVE)
-    - Insert anywhere in the List
-    - Will Resolve in cases of Beginning and Ending Insertion inferred throgh Posix
+    - Insert anywhere in the List.
+    - Will Resolve in cases of Beginning and Ending Insertion inferred through Posix.
     ```c
     void Insert_Posix() {
         int Posix = getPosix();
@@ -168,8 +168,8 @@
     }
     ```
     3. #### Deletion at a Position (INTUITIVE)
-    - Delete anywhere in the List
-    - Will Resolve in cases of Beginning and Ending detetion inferred throgh Posix
+    - Delete anywhere in the List.
+    - Will Resolve in cases of Beginning and Ending deletion inferred Through Posix.
     ```c
     void Delete_Posix() {
         if(isEmpty()) {

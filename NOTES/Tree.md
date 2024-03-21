@@ -1,10 +1,10 @@
 # 🌲 Trees
-- Non Linear Data Structure for modeling a hierarchical structure
+- Non Linear Data Structure for modeling a hierarchical structure.
 - Single Parent, Multiple Children.
 
 
 ### 🔑 Key Characteristics of a Trees:
-- **Nodes**: The elements that make up the tree
+- **Nodes**: The elements that make up the tree.
     1. **Root Node**: The First Node of the Tree.
     2. **Parent Node**: Nodes that have children/successors (except the Root Node).
     3. **Child Nodes**: Nodes that extend from another node.
@@ -13,12 +13,12 @@
     - **Depth of a Node**: Length of the path from the root to that node.
     - **Height of a Node**: Legnth of the path from the node to the deepest leaf/terminal node.
 - **Branches**: Directed Lines that show Parent-Child Relation and connect the nodes together.
-- **Sub Tree**: Non Empty partition of Node other than Root .
+- **Sub Tree**: Non Empty partition of Node other than Root.
 - **Degree**: The number of Branches Associated with a node. 
     1. **In-Degree**: The number of Branches directed towards the node.
     2. **Out-Degree**: The number of Branches directed away from the node.
 - **Levels**: The generation of nodes where root is 0 and increasing moving down.
-- **Depth**: The length of  the largest path from root to the terminal nodes.
+- **Depth**: The length of the largest path from root to the terminal nodes.
 - **Keys**: Value of a node based on which the search is carried out.
 
 ### 🌿 Types of Trees

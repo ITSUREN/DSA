@@ -1,8 +1,8 @@
 # 🔁 Circular Queue as Linked List
-- The [CODE:📑](../Miscellaneous/CircularQueue_LinkedList.c.
+- The [CODE:📑](../Miscellaneous/CircularQueue_LinkedList.c).
 - Also called Ring Buffers.
 - Data may be inserted at the end of the Queue and Deleted from the front of the Queue.
-- FIFO [First In First Out]
+- FIFO [First In First Out].
 
 ### 🔧 Operations on a Circular Queue:
 1. [Enqueue](#enqueue): Adds an element to the rear of the queue.
@@ -44,7 +44,7 @@
     ```
 
 2. #### **Dequeue**:
-    - To delete elements on top of the Queue.
+    - To delete elements from the Queue.
     ```c
     int Dequeue() {
         Node *NewNode = (Node *) malloc (sizeof(Node));

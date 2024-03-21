@@ -2,7 +2,7 @@
 - The [CODE:📑](../Data_Structures/modules/Circular_Queue.c).
 - Also called Ring Buffers.
 - Data may be inserted at the end of the Queue and Deleted from the front of the Queue.
-- FIFO [First In First Out]
+- FIFO [First In First Out].
 
 ### 🔧 Operations on a Linear Queue:
 1. Enqueue: Adds an element to the rear of the queue.

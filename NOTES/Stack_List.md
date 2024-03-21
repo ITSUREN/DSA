@@ -2,14 +2,14 @@
 - The [CODE:📑](../Data_Structures/stack.c).
 - A linear Data Structure.
 - A special type of [List](./List.md).
-- Data may be inserted and deleted only of the top of the stack. 
-- LIFO [Last In First Out]
+- Data may be inserted or deleted only on the top of the stack. 
+- LIFO [Last In First Out].
 
 ### 🔧 Operations on a Stack:
 1. [Push](#push): Adds an element to the top of the Stack.
-2. [Pop](#pop): Returns and deletes an item fromt eh top of the Stack.
-4. [isEmpty](#isempty-check): Checks if the queue is empty.
-5. [isFull](#isfull-check): Checks if the queue is full (applicable for fixed-size queues).
+2. [Pop](#pop): Returns and deletes an item from the top of the Stack.
+4. [isEmpty](#isempty-check): Checks if the Stack is empty.
+5. [isFull](#isfull-check): Checks if the Stack is full (applicable for fixed-size Stacks).
 6. [Traverse](#traverse): Displays the content of the Stack.
 
 &nbsp;

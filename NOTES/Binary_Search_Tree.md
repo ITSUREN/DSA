@@ -1,6 +1,6 @@
 # 🌳 Binary Search Tree
 - The [CODE:📑](../Data_Structures/Binary_Search_Tree.c).
-- A tree of finite set of elements that can be paritioned into 3 Disjoint subsets
+- A tree of finite set of elements that can be partitioned into 3 Disjoint subsets.
 - 3 Disjoint Subjset: Root, Left Sub-trees, and Right Sub-trees.
 - The left of the parent node must always be smaller than the Parent and the Right should conversely be the greater value.
 
@@ -115,7 +115,7 @@
     ```
 
 5.  #### **Search** 
-    - To Search an item
+    - To Search an item.
     ```c
     Node *Search(Node *ParentNode, int Key) { 
         if (isEmpty(Root)) {

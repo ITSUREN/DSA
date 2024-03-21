@@ -2,7 +2,7 @@
 - The [CODE:📑](../Data_Structures/modules/Linear_Queue.c).
 - A linear Data Structure.
 - Data may be inserted at the end of the Queue and Deleted from the front of the Queue.
-- FIFO [First In First Out]
+- FIFO [First In First Out].
 
 ### 🔧 Operations on a Linear Queue:
 1. [Enqueue](#enqueue): Adds an element to the rear of the queue.
@@ -57,7 +57,7 @@
     ```
 
 3. #### **Dequeue**:
-    - To delete elements on top of the queue.
+    - To delete elements in the queue.
     ```c
     int Dequeue(LinearQueue *LQueue) {
         if (isEmpty(LQueue)) {

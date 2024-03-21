@@ -2,15 +2,15 @@
 - The [CODE:📑](../Miscellaneous/Stack_LinkedList.c).
 - A linear Data Structure.
 - A special type of [LinkedList](./Linked_List.md).
-- Data may be inserted and deleted only of the top of the stack. 
-- LIFO [Last In First Out]
+- Data may be inserted or deleted only on the top of the stack. 
+- LIFO [Last In First Out].
 
 ### 🔧 Operations on a Stack:
 1. [Push](#push): Adds an element to the top of the Stack.
-2. [Pop](#pop): Returns and deletes an item fromt eh top of the Stack.
+2. [Pop](#pop): Returns and deletes an item from the top of the Stack.
 4. [isEmpty](#isempty-check): Checks if the queue is empty.
 5. ~~isFull~~: Dynamically Allocated Memory, hence, not needed.
-6. [Traverse](#traverse): Displays the content of the Stack.
+6. [Traverse](#traverse): Displays the contents of the Stack.
 
 &nbsp;
 # 🧩 **Operations**
@@ -42,7 +42,7 @@
     ```
 
 2. #### **Pop**:
-    - To delete elements on top of the stack.
+    - To delete elements from the top of the stack.
     ```c
     int pop() {
         Node *NewNode = (Node *) malloc (sizeof(Node));

@@ -1,11 +1,11 @@
 # 🧠 Memory Allocation
 - The [CODE:📑](../Preliminary_Practices/memory_alloc.c).
 - Consists of exercises to understand the C functions to allocate and dellocate memory spaces
-- The functions to allocate memory spaces
-    1. **[malloc](#1️⃣-malloc)**: to reserve a single block of memory.
-    2. **[calloc](#2️⃣-calloc)**: to reserve multiple blocks of memory and initially set them to 0;
-    3. **[realloc](#3️⃣-realloc)**: to reallocate the already allocated spaces.
-    4. **[free](#4️⃣-free)**: used to free the reserved spaces. will be used on every example.
+- The functions to allocate memory spaces:
+    1. **[malloc](#1️⃣-malloc)**: To reserve a single block of memory.
+    2. **[calloc](#2️⃣-calloc)**: To reserve multiple blocks of memory and initially set them to 0;
+    3. **[realloc](#3️⃣-realloc)**: To reallocate the already allocated spaces.
+    4. **[free](#4️⃣-free)**: To free the reserved spaces. will be used on every example.
     
     <img src="./Resources/mallocvscalloc.svg" alt="drawing" width="500"/>
 

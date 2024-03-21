@@ -1,5 +1,5 @@
 # 🎲 Expression Evaluations
-- Converions Include:
+- Evaluations Include:
     1. **[Prefix Evaluation](#1️⃣-prefix-evaluations)**
     2. **[Infix Evaluation](#2️⃣-infix-evaluations)**
     3. **[Postfix Evaluation](#3️⃣-postfix-evaluations)**
@@ -22,16 +22,16 @@ for (int i=strlen(prefix); i>=0;i--) {
         pushv(value);
     }
     ```
-    2. If scanned character is an operator then 
-        1. Pop two operands and an operator
-        2. Evaluate the expression with the operator then push to the Value Stack
+    2. If scanned character is an operator then: 
+        1. Pop two operands and an operator.
+        2. Evaluate the expression with the operator then push to the Value Stack.
     ```c
     else {
         Operand1=popv();Operand2=popv();
         pushv(EvaluateOperator(Operand1,character,Operand2));
     }
     ```
-3. Pop and display the result that remains in the Value Stack
+3. Pop and display the result that remains in the Value Stack.
 ### Code Details:
 - <span style="color:orange"> **Warning:**</span> Run the code from the [main code file](../Data_Structures/expression_operations.c) and not the below file.
 - **The Code: [Prefix Evaluation](../Data_Structures/expression_evaluation.c#L4)**.
@@ -42,12 +42,12 @@ for (int i=strlen(prefix); i>=0;i--) {
 
 ## 2️⃣ Infix Evaluations
 ### Algorithm
-1. Scan one character from Left to Right
+1. Scan one character from Left to Right.
 2. Repeat until the string is completely read:
     1. If the scanned character is an operand push it to Value Stack.
-    2. If the scanned character is an operator and 
-        1. If it's precedence is lower than the precedence of the stack then pop two operands and operators, evalutate them and push them to the Value Stack
-        2. push the character to the Operator Stack
+    2. If the scanned character is an operator and, 
+        1. If it's precedence is lower than the precedence of the stack then pop two operands and operators, evalutate them and push them to the Value Stack.
+        2. push the character to the Operator Stack.
         ```c
         else if (precedenceOperator()<=precedence(character)) {
             pusho(character);            }
@@ -58,7 +58,7 @@ for (int i=strlen(prefix); i>=0;i--) {
             pushv(EvaluateOperator(Operand1,Operator,Operand2));
         }
         ```
-    3. If the scanned character is '(' then push it to Operator Stack but if the scanned character is ')' then evaluate the expression until the '(' is reached.
+    3. If the scanned character is '(' then push it to Operator Stack but if the scanned character is ')' then evaluate the expression until the '(' character is reached.
     ```c
     if (character=='('){
         pusho(character);
@@ -88,7 +88,7 @@ while (!OStackisEmpty()) {
 
 ## 3️⃣ Postfix Evaluations
 ### Algorithm
-1. Scan one character from Left to Right
+1. Scan one character from Left to Right.
 ```c
 for (int i=0; i<=(strlen(postfix)-1);i++) {
 }
@@ -102,16 +102,16 @@ for (int i=0; i<=(strlen(postfix)-1);i++) {
         pushv(value);
     }
     ```
-    2. If scanned character is an operator then 
-        1. Pop two operands and an operator
-        2. Evaluate the expression with the operator then push to the Value Stack
+    2. If scanned character is an operator then:
+        1. Pop two operands and an operator.
+        2. Evaluate the expression with the operator then push to the Value Stack.
     ```c
     else {
         Operand1=popv();Operand2=popv();
         pushv(EvaluateOperator(Operand1,character,Operand2));
     }
     ```
-3. Pop and display the result that remains in the Value Stack
+3. Pop and display the result that remains in the Value Stack.
 ### Code Details:
 - <span style="color:orange"> **Warning:**</span> Run the code from the [main code file](../Data_Structures/expression_operations.c) and not the below file.
 - **The Code: [Postfix Evaluation](../Data_Structures/expression_evaluation.c#L69)**.

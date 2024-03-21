@@ -1,6 +1,6 @@
 # 🔗 Doubly Linked List
 - The [CODE:📑](../Data_Structures/DoublyLinked_List.c).
-- Has Two Structural pointer: Previous and Next;
+- Has two Structural pointers: Previous and Next;
 
 ### 🔧 Operations on a Linked List:
 1. **[Inserting Elements](#insertions)**
@@ -30,7 +30,7 @@
     }
     ```
 2. #### **First Node Swap** Logic:
-    - Logic used when the first node already exist be writing must be done.
+    - Logic used when the first node already exist but writing must be done.
     ```c
     void FirstNodeSwap_logic(Node *NewNode) {
         NewNode->Next= First; 
@@ -94,8 +94,8 @@
     }
     ```
     3. #### Inserting at a Position (INTUITIVE)
-    - Insert anywhere in the List
-    - Will Resolve in cases of Beginning and Ending Insertion inferred throgh Posix
+    - Insert anywhere in the List.
+    - Will Resolve in cases of Beginning and Ending Insertion inferred through Posix.
     ```c
     void Insert_Posix() {
         int Posix = getPosix();
@@ -161,8 +161,8 @@
     }
     ```
     3. #### Deletion at a Position (INTUITIVE)
-    - Delete anywhere in the List
-    - Will Resolve in cases of Beginning and Ending detetion inferred throgh Posix
+    - Delete anywhere in the List.
+    - Will Resolve in cases of Beginning and Ending deletion inferred through Posix.
     ```c
     void Delete_Posix() {
         if(isEmpty()) {
