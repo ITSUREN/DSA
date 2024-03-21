@@ -1,13 +1,13 @@
 # 🌳 Binary Tree
-- A tree of finite set of elements that can be paritioned into 3 Disjoint subsets
-- 3 Disjoin Subjest: Root, Left Sub-trees, and Right Sub-trees.
+- A tree of finite set of elements that can be partitioned into 3 Disjoint subsets
+- 3 Disjoint Subsets: Root, Left Sub-trees, and Right Sub-trees.
 
 ### 🌿 Types of Binary Trees:
-1. **Binary Search Trees**:
+1. **[Binary Search Trees](./Binary_Search_Tree.md)**:
     - Elements in the Left Subtree are less than or equal to Parent Node's value and 
     - Element in the Right Subtree are greater than Parent Node's value.
 1. **Stricty Binary Trees**:
-    - Evey non-leaf node has noneempty left and right subtrees.
+    - Every non-leaf node has noneempty left and right subtrees.
     - Degrees of every node is either zero or two but never 1.
 2. **Full Binary Tree**:
     - Strictly Binary Tree
@@ -49,7 +49,7 @@
     level = Log2(l)+1
     ```
 
-### 🔧 Operations on a Queue:
+### 🔧 Operations on a Binary Tree:
 1. **Insertion**: Adding a new node to the binary tree.
 2. **Deletion**: Removing a node from the binary tree.
 3. **Traversal**:
