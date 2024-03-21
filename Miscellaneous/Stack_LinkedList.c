@@ -24,13 +24,6 @@ int getItem() {
     return Item;
 }
 
-int getPosix() {
-    int Posix;
-    printf("\nEnter the Position: ");
-    scanf("%d",&Posix);
-    return Posix;
-}
-
 int NodeCount() {
     Node *temp = Top;
     int NodeCount=0;
