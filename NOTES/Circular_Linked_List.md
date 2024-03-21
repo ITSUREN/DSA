@@ -1,4 +1,4 @@
-# 🔗 Singly Linked List
+# 🔗 Circular Linked List
 - The [CODE:📑](../Data_Structures/Circular_Linked_List.c).
 - Has only One Structural pointer
 - The Last Node is Connected to the First Node 
