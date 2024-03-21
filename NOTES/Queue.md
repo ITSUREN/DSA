@@ -15,9 +15,8 @@
 ### 🔧 Operations on a Queue:
 1. **Enqueue**: Adds an element to the rear of the queue.
 2. **Dequeue**: Removes and returns the element from the front of the queue.
-3. **Peek** (or Front): Returns the element at the front of the queue without removing it.
-4. **isEmpty**: Checks if the queue is empty.
-5. **isFull**: Checks if the queue is full (applicable for fixed-size queues).
+3. **Display**: Displays the queue.
+
 
 ### 🌿 Types of Queues:
 1. #### **[Linear Queue](./Linear_Queue.md)**: 
