@@ -15,7 +15,7 @@
 &nbsp;
 # 🧩 **Operations**
 ### ✔️ Checks Used
-2. #### **isEmpty** check: 
+1. #### **isEmpty** check: 
     - Checking is the stack is in underflow condition.
     ```c
     int isEmpty() {
@@ -24,7 +24,7 @@
     ```
 
 ### 🛠️ Methods Used
-2. #### **Push**:
+1. #### **Push**:
     - To add elements to the top of the stack.
     ```c
     void push() {
@@ -41,7 +41,7 @@
     }
     ```
 
-3. #### **Pop**:
+2. #### **Pop**:
     - To delete elements on top of the stack.
     ```c
     int pop() {
@@ -58,7 +58,7 @@
     }
     ```
 
-4. #### **Traverse**:
+3. #### **Traverse**:
     - To display the elements in the stack.
     ```c
     void traverse() {
