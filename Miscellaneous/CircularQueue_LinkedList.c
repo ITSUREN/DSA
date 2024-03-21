@@ -28,9 +28,12 @@ int getItem() {
 int NodeCount() {
     Node *temp = First;
     int NodeCount=0;
-    while (temp!=NULL) {
-        NodeCount++;
-        temp = temp->Next;
+    if (!isEmpty()) {
+        NodeCount=1;
+        while (temp!=Last) {
+            NodeCount++;
+            temp = temp->Next;
+        }
     }
     return NodeCount;
 }
@@ -40,11 +43,12 @@ void Enqueue() {
     Node *NewNode = (Node *) malloc (sizeof(Node));
     int Item=getItem();
     NewNode -> Item = Item;
-    NewNode -> Next = NULL;
     if(isEmpty()) {
+        NewNode -> Next = NewNode;
         First = NewNode;
         Last = NewNode;
     } else {
+        NewNode -> Next = First;
         Last->Next=NewNode;
         Last=NewNode;
     }
@@ -69,7 +73,7 @@ int Dequeue() {
 
 void Display() {
     Node *temp = First ;
-    printf("\n The Elements in the Stacks are: [ ");
+    printf("\n The Elements in the List are: [ ");
     if (!isEmpty()) {
         for (int i=0;temp!=Last;i++) {
             printf("%d,",temp->Item);
