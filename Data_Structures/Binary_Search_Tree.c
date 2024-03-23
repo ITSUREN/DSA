@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "./modules/Log.c"
+#include "./modules/c_functions_linux.c"
 
 struct BSTNode {
     int Key;
@@ -24,6 +25,7 @@ int isEmpty(Node *Root) {
     return (Root==NULL);
 }
 
+// Gimmick Feature only 3
 int NodeCount(Node *ParentNode) {
     if (ParentNode==NULL){
         return 0;
@@ -32,6 +34,7 @@ int NodeCount(Node *ParentNode) {
     }
 }
 
+// Gimmick Feature only 2
 Node *ParentNodeFind(Node *temp, Node *Child) {
     if (isEmpty(Root)) {
         printf("\n Tree Empty");
@@ -58,13 +61,14 @@ Node *ParentNodeFind(Node *temp, Node *Child) {
     }
 }
 
+// Gimmick Feature only 1
 int numberofSiblings(Node *temp) {
     int count=0;
     if (temp->Left!=NULL) {
-        count=count++; 
+        count++; 
     }
     if (temp->Right!=NULL) {
-        count=count++;
+        count++;
     }
     return count;
 }
@@ -128,15 +132,54 @@ void SearchInterface() {
     }
 }
 
+Node* FindMin(Node* node) {
+    if (node == NULL)
+        return NULL;
+
+    while (node->Left != NULL)
+        node = node->Left;
+
+    return node;
+}
+
 //Deletion
-Node *Delete(Node *ParentNode, int Key) {
-    printf("\n🚧 Feature Not Implemented.");
-    //todo
+Node* Delete(Node *root, int key) {
+    if (root == NULL) {
+        printf("\n Tree Empty. Nothing to Delete.");
+        return root;
+    }
+
+    if (key < root->Key) {
+        root->Left = Delete(root->Left, key);
+    } else if (key > root->Key) {
+        root->Right = Delete(root->Right, key);
+    } else {
+        // Node with only one child or no child
+        if (root->Left == NULL) {
+            Node *temp = root->Right;
+            free(root);
+            return temp;
+        } else if (root->Right == NULL) {
+            Node *temp = root->Left;
+            free(root);
+            return temp;
+        }
+
+        else {
+            // Node with two children: Get the inorder successor (smallest in the right subtree)
+            Node* temp = FindMin(root->Right);
+            // Copy the inorder successor's content to this node
+            root->Key = temp->Key;
+            // Delete the inorder successor
+            root->Right = Delete(root->Right, temp->Key);
+        }
+    }
+    return root; //no need 
 }
 
 void Delete_Interface() {
     int Key=getKey();
-    Delete(Root, Key);
+    Delete(Root,Key);
 }
 
 // Traversal 
@@ -150,7 +193,7 @@ void InitialPrint() {
 void PreorderTraversal(Node *ParentNode){
     InitialPrint();
     if (isEmpty(Root)) {
-        printf("\n Tree Empty.");
+        printf("Tree Empty.");
     } else if (!isEmpty(ParentNode)){
         printf("%d, ",ParentNode->Key);
         PreorderTraversal(ParentNode->Left);
@@ -161,7 +204,7 @@ void PreorderTraversal(Node *ParentNode){
 void InorderTraversal(Node *ParentNode){
     InitialPrint();
     if (isEmpty(Root)) {
-        printf("\n Tree Empty.");
+        printf("Tree Empty.");
     } else if (!isEmpty(ParentNode)){
         InorderTraversal(ParentNode->Left);
         printf("%d, ",ParentNode->Key);
@@ -172,7 +215,7 @@ void InorderTraversal(Node *ParentNode){
 void PostorderTraversal(Node *ParentNode){
     InitialPrint();
     if (isEmpty(Root)) {
-        printf("\n Tree Empty.");
+        printf("Tree Empty.");
     } else if (!isEmpty(ParentNode)){
         PostorderTraversal(ParentNode->Left);
         PostorderTraversal(ParentNode->Right);
@@ -187,17 +230,19 @@ void TraversalMenu() {
     system("clear");
     printf("\nMENU: Traversal\n\n1. Preorder Traversal\n2. Inorder Traversal\n3. Postorder Traversal\n\n=>");
     scanf("%d",&choice);
+    system("clear");
     switch(choice) {
         case 1:
             PreorderTraversal(Root);
+            getch();
             break;
         case 2:
             InorderTraversal(Root);
-            printf("\b  ");
+            getch();
             break;
         case 3:
             PostorderTraversal(Root);
-            printf("\b  ");
+            getch();
             break;
         default:
             printf("\n [ERR] Invalid Option Selected.");
@@ -205,7 +250,8 @@ void TraversalMenu() {
 }
 
 void Menu(int *choice) {
-    printf("\nMENU: The Number of Nodes: %d\n\n1. Insertion\n2. Deletion🚧\n3. Traversal\n4. Search\n\n=> ", NodeCount(Root));
+    system("clear");
+    printf("\nMENU: The Number of Nodes: %d\n\n1. Insertion\n2. Deletion\n3. Traversal\n4. Search\n\n=> ", NodeCount(Root));
     scanf("%d",choice);
     switch (*choice) {
         case 1:
@@ -219,6 +265,7 @@ void Menu(int *choice) {
             break;
         case 4:
             SearchInterface();
+            getch();
             break;
         default:
             printf("\n [ERR] Invalid Option Selected");
@@ -228,7 +275,6 @@ void Menu(int *choice) {
 int main() {
     int choice =0;
     do {
-        system("clear");
         Menu(&choice);
     } while (choice!=0);
 }

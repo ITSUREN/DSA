@@ -6,10 +6,12 @@
 1. **[Binary Search Trees](./Binary_Search_Tree.md)**:
     - Elements in the Left Subtree is less than Parent Node's value, and 
     - Element in the Right Subtree is greater than Parent Node's value.
-1. **Stricty Binary Trees**:
+2. **Balanced Binary Tree**: 
+    - height difference between the left and right subtrees of any node is not greater than one.
+3. **Stricty Binary Trees**:
     - Every non-leaf node has non-empty left and right subtrees.
     - Degrees of every node is either zero or two but never one.
-2. **Full Binary Tree**:
+4. **Full Binary Tree**:
     - Strictly Binary Tree.
     - A binary tree of height h with no missing node.
     - if:
@@ -20,16 +22,14 @@
         l=i+1
         n=2*i+1
     ```
-3. **Complete Binary Tree**:
+5. **Complete Binary Tree**:
     - Non Strict Binary Tree.
     - All levels of tree are filled except the lowest level, which are filled from as left as possible.
     - This is done such that that when traversing there are no NULL element.
-4. **Perfect Binary Tree**:
+6. **Perfect Binary Tree**:
     - Full + Complete Binary tree.
-5. **Degenerate Binary Tree**:
+7. **Degenerate Binary Tree**:
     - Each Node has only one child.
-6. **Balanced Binary Tree**: 
-    - height difference between the left and right subtrees of any node is not greater than one.
 
 ### 🔑 Key Characteristics of Binary Tree:
 - **Maximum number of Child Nodes**: 2.
