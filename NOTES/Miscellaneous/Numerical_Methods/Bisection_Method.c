@@ -4,7 +4,7 @@
 
 #define MAX 50
 #define Error 0.00001
-#define f(x) (x*x-4*x-10)
+#define f(x) (x*x-4*x-10) // Function Definition
 
 float bisection(float x1,float x2) {
     float x0;

@@ -4,14 +4,14 @@
 
 #define MAXSIZE 50
 
-struct Node_Circ {
+// Data Type Setup
+typedef struct Node_Circ {
     int Item;
     struct Node_Circ *Previous;
     struct Node_Circ *Next;
-};
+} Node;
 
-typedef struct Node_Circ Node;
-
+// Initial Setup
 Node *First=NULL;
 Node *Last=NULL;
 
@@ -30,7 +30,7 @@ int getPosix() {
     return Posix;
 }
 
-//LOGICS
+// LOGICS
 void FirstNode_logic(Node *NewNode) {
     NewNode -> Next = NULL;
     NewNode -> Previous = NULL; //changed this to set the previous pointer
@@ -62,12 +62,12 @@ void DeleteEnd_logic() {
     Last = temp; // Update the Last pointer to point to the second last node
 }
 
-//CHECKS
+// CHECKS
 int isEmpty() {
     return (First==NULL);
 }
 
-//Modules
+// Modules
 int NodeCount() {
     Node *temp = First;
     int NodeCount=0;
@@ -226,7 +226,7 @@ void Delete_Posix() {
     }
 }
 
-//MENUS SECTION
+// MENUS SECTION
 void Deletion_Menu() {
     int choice=0;
     system("clear");

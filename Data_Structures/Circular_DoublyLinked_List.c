@@ -4,14 +4,14 @@
 
 #define MAXSIZE 50
 
-struct Node_Circ {
+// Data Type Setup
+typedef struct Node_Circ {
     int Item;
     struct Node_Circ *Previous;
     struct Node_Circ *Next;
-};
+} Node;
 
-typedef struct Node_Circ Node;
-
+// Initial Setup
 Node *First=NULL;
 Node *Last=NULL;
 
@@ -30,7 +30,7 @@ int getPosix() {
     return Posix;
 }
 
-//LOGICS
+// LOGICS
 void FirstNode_logic(Node *NewNode) {
     NewNode -> Next = NewNode;
     NewNode -> Previous = NewNode; //changed this to set the previous pointer
@@ -65,12 +65,12 @@ void DeleteEnd_logic() {
     First->Previous=Last;
 }
 
-//CHECKS
+// CHECKS Section----
 int isEmpty() {
     return (First==NULL);
 }
 
-//Modules
+// Modules Section----
 int NodeCount() {
     Node *temp = First;
     int NodeCount=0;
@@ -93,7 +93,7 @@ void DEBUG_lastnode() {
     getch();
 }
 
-// Displaying
+// Displaying Section----
 void  Display() {
     Node *temp = First;
 
@@ -108,7 +108,7 @@ void  Display() {
     printf("\b ]");
 }
 
-
+// Prints only one time 
 void InitialPrint() {
     static int alreadycalled=0;
     if (!alreadycalled) {
@@ -117,7 +117,7 @@ void InitialPrint() {
     } 
 }
 
-// Searching
+// Searching Section----
 void Search() {
     Node *temp=First;
     if (isEmpty()) {
@@ -135,7 +135,7 @@ void Search() {
     }
 }
 
-// INSERTION
+// INSERTION Section----
 void Insert_Beginning(){
     Node *NewNode =(Node *)malloc(sizeof(Node));
     NewNode->Item = getItem();
@@ -183,6 +183,7 @@ void Insert_Posix() {
     }
 }
 
+// Deletion Section----
 void Delete_Beginning() {
     Node *hold;
     if(isEmpty()) {
@@ -237,7 +238,7 @@ void Delete_Posix() {
     }
 }
 
-//MENUS SECTION
+// MENUS SECTION----
 void Deletion_Menu() {
     int choice=0;
     system("clear");

@@ -4,13 +4,13 @@
 
 #define MAXSIZE 50
 
-struct Node_SL{
+// Data Type Setup
+typedef struct Node_SL{
     int Item;
     struct Node_SL *Next;
-};
+} Node;
 
-typedef struct Node_SL Node;
-
+// Initial Setup
 Node *First=NULL;
 Node *Last=NULL;
 
@@ -29,7 +29,7 @@ int getPosix() {
     return Posix;
 }
 
-//LOGICS
+// LOGICS
 void FirstNode_logic(Node *NewNode) {
     NewNode -> Next = NewNode;
     First = NewNode;
@@ -58,12 +58,12 @@ void DeleteEnd_logic() {
     Last = temp; // Update the Last pointer to point to the second last node
 }
 
-//CHECKS
+// CHECKS
 int isEmpty() {
     return (First==NULL);
 }
 
-//Modules
+// Modules
 int NodeCount() {
     Node *temp = First;
     int NodeCount=0;
@@ -227,7 +227,7 @@ void Delete_Posix() {
     }
 }
 
-//MENUS SECTION
+// MENUS SECTION
 void Deletion_Menu() {
     int choice=0;
     system("clear");

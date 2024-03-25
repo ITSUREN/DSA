@@ -4,11 +4,14 @@
 #include "./modules/c_functions_linux.c" //for getch
 
 #define MAXSIZE 30
+
+// Data Type Setup
 typedef struct{
     int Item[MAXSIZE];
     int Size;
 } List;
 
+// Modules
 void listFill(List *list, int ListIdentifier) {
     printf("\n Enter %d values for the list %d: ",list->Size,ListIdentifier);
     for (int i=0;i<list->Size;i++) {
@@ -69,7 +72,8 @@ int shifter(List *list,int index,int direction) {
     }
 }
 
-void insertion(List *list){
+// Insertion
+void Insertion(List *list){
     int Item;
     int index=getIndex(*list);
     printf("\n Enter the Value to Insert: ");
@@ -78,19 +82,22 @@ void insertion(List *list){
     list->Item[index]=Item;
 }
 
-void deletion(List *list) {
+// Deletion
+void Deletion(List *list) {
     int index=getIndex(*list);
     shifter(list, index, 1);
 }
 
-void modify(List *list){
+// Modification
+void Modify(List *list){
     int index=getIndex(*list),NewItem;
     printf("\n Enter the New Value: ");
     scanf("%d",&NewItem);
     list->Item[index]=NewItem;
 }
 
-void traverse(List list){
+// Disaplaying
+void Traverse(List list){
     printf("\n The Items in the list are: [ ");
     for (int i=0;i<list.Size;i++) {
         printf("%d,",list.Item[i]);
@@ -99,7 +106,8 @@ void traverse(List list){
     getch();
 }
 
-void merge(List *list, int numberofLists) {
+// Merging
+void Merge(List *list, int numberofLists) {
     system("clear");
     int chosen[2], temp;
     printf("\nMENU: Choose two lists among");
@@ -127,7 +135,7 @@ void merge(List *list, int numberofLists) {
     }
 }
 
-
+// Menus
 void menu(List *list,int *choice,int numberofLists) {
     static int ListIdentifier=0;
     system("clear");
@@ -140,23 +148,23 @@ void menu(List *list,int *choice,int numberofLists) {
     scanf("%d",choice);
     switch(*choice) {
         case 1:
-            insertion(&list[ListIdentifier]);
+            Insertion(&list[ListIdentifier]);
             break;
         case 2:
-            deletion(&list[ListIdentifier]);
+            Deletion(&list[ListIdentifier]);
             break;
         case 3:
-            modify(&list[ListIdentifier]);
+            Modify(&list[ListIdentifier]);
             break;
         case 4:
-            traverse(list[ListIdentifier]);
+            Traverse(list[ListIdentifier]);
             break;
         case 5:
             ListIdentifier=(ListIdentifier+1)%numberofLists;
             break;
         case 6:
             if (numberofLists>1) {
-                merge(list,numberofLists);
+                Merge(list,numberofLists);
             }
         default:
             printf("\n [ERR 01] Invalid Inputs\n");

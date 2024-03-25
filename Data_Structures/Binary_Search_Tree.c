@@ -1,15 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "./modules/Log.c"
-#include "./modules/c_functions_linux.c"
+//#include "./modules/Log.c"
+#include "./modules/c_functions_linux.c" //for getch
 
-struct BSTNode {
+// Data Type Setup
+typedef struct BSTNode {
     int Key;
     struct BSTNode *Left;
     struct BSTNode *Right;
-};
+} Node;
 
-typedef struct BSTNode Node;
+// Prottyping
+int getkey();
+int isEmpty(Node *);
+Node *ParentNodeFind(Node *, Node *);
+int numberofsiblings(Node *);
+void Insert_Logic();
+Node *Insert(Node *, int);
+void Insert_Interface();
+Node *Search(Node *, int);
+void Search_Interface();
+Node *FindMin(Node *);
+Node *Delete(Node *, int);
+void Delete_Interface();
+void PreorderTraversal(Node *);
+void InorderTraversal(Node *);
+void PostorderTraversal(Node *);
+void TraversalMenu();
+void Menu(int *);
+
+// Initial Setup
 Node *Root=NULL;
 static int alreadycalled=0;
 
@@ -73,7 +93,7 @@ int numberofSiblings(Node *temp) {
     return count;
 }
 
-// Insertion
+// Insertion----
 void Insert_Logic(Node **NewNode,int Key) {
     (*NewNode)->Key=Key;
     (*NewNode)->Left=NULL;
@@ -109,7 +129,7 @@ void Insert_Interface() {
     Insert(Root, Key);
 }
 
-// Search
+// Search----
 Node *Search(Node *ParentNode, int Key) { 
     if (isEmpty(Root)) {
         return NULL;
@@ -122,7 +142,7 @@ Node *Search(Node *ParentNode, int Key) {
     }
 }
 
-void SearchInterface() {
+void Search_Interface() {
     int Key =getKey();
     Node *temp=Search(Root,Key);
     if (temp==NULL) {
@@ -132,6 +152,7 @@ void SearchInterface() {
     }
 }
 
+// For Deletion
 Node* FindMin(Node* node) {
     if (node == NULL)
         return NULL;
@@ -142,7 +163,7 @@ Node* FindMin(Node* node) {
     return node;
 }
 
-//Deletion
+//Deletion----
 Node* Delete(Node *root, int key) {
     if (root == NULL) {
         printf("\n Tree Empty. Nothing to Delete.");
@@ -182,7 +203,7 @@ void Delete_Interface() {
     Delete(Root,Key);
 }
 
-// Traversal 
+// Traversal----
 void InitialPrint() {
     if (!alreadycalled) {
         printf("Items Are: ");
@@ -223,7 +244,7 @@ void PostorderTraversal(Node *ParentNode){
     }
 }
 
-//Menus
+// Menus----
 void TraversalMenu() {
     int choice=0;
     alreadycalled=0;

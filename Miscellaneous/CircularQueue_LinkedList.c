@@ -3,13 +3,13 @@
 
 #define MAXSIZE 50
 
-struct Node_SL{
+// Data Type Setup
+typedef struct Node_SL{
     int Item;
     struct Node_SL *Next;
-};
+} Node;
 
-typedef struct Node_SL Node;
-
+// Initial Setup
 Node *First=NULL; //Is actually at the bottom depending on how you look 
 Node *Last=NULL;
 
@@ -84,6 +84,7 @@ void Display() {
     printf("\b ]\b");
 }
 
+// Menus
 void menu(int *choice) {
     printf("\nMENU: Number of Stack Elements: %d\n\n1. Enqueue\n2. Dequeue\n3. Traverse\n\n=> ",NodeCount());
     scanf("%d",choice);
