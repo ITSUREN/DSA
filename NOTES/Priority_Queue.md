@@ -7,8 +7,10 @@
 ### 🌿 Types of Priority Queue
 1. **Ascending** Priority Queue: 
 Where Dequeue operation deletes the smallest value within the Queue.
+<img src="../NOTES/Resources/Priority Queue Ascending.svg" width="600px">
 2. **Descending** Priority Queue:
 Where Dequeue operation deletes the largest value withing the Queue.
+<img src="../NOTES/Resources/Priority Queue Descending.svg" width="600px">
 
 ### 🔧 Operations on a Priority Queue:
 1. [Enqueue](#enqueue): Adds an element to the rear of the priority queue.
