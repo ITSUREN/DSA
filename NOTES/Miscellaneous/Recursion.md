@@ -6,7 +6,7 @@
 - Each function call should bring itself closer to the solution.
 - Must include a stopping condition.
 
-### 🌿 Types of Queues:
+### 🌿 Types of Recursions:
 - Categorized into 5 Types as:
     1. ### Direct Recursion:
     - The Recursion where a _Single_ Function calls itself repeatedly until a base condition is satisfied
@@ -48,7 +48,7 @@
     ```
     4. Linear Recursion
     5. Tree Recursion
-    
+
 &nbsp;
 # 🧰 Applications
 - Some Programs using Recursion.
