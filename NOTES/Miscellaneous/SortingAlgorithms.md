@@ -1,11 +1,11 @@
 #  🔀 Sorting Algorithms
-- Agorithms to order the elements in an array in specific order
+- Algorithms to order the elements in an array in a specific order
 
 ### 🌿 Nature of Sorting Algorithms:
-- The Sorting Algorithm can be any of the folllowing natures:
+- The Sorting Algorithm can be any of the following natures:
 1. ### In-Place Sorting Algorithms
     - Rearranges the elements of an array or a list within the memory space it already occupies.
-    - Doesnt require additional space proportional to the size of the input. 
+    - Doesn't require additional space proportional to the size of the input. 
     - Examples:
     1. Insertion Sort
     2. Selection Sort
@@ -27,11 +27,10 @@
     - What are not In-Place Sorting Algorithms
     1. Heap Sort
     2. Bubble Sort
-    3. Selection Sort
+    3. Selection Sort (may depend upon application)
     4. Shell Sort (may depend upon application)
-    5. Selection Sort (may depend upon application)
 3. Internal Sorting Algorithms
-    - Those that operate entirely withing the main Memory.
+    - Those that operate entirely within the main Memory.
     - Examples:
     1. Insertion Sort
     2. Selection Sort
