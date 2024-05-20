@@ -26,10 +26,10 @@
 - Suitable for graphs without multiple edges, and directed graphs.
 2. #### **Adjacency Matrix**:
 - Uses a Square Matrix with the size as the number of vertices to store edges.
-- $a_{ij} = \begin{cases} 1 & \text{if } (v_i, v_j) \text{ is an edge in } G, \\ 0 & \text{otherwise.} \end{cases}$
+- <img src="https://latex.codecogs.com/svg.image?\inline&space;{\color{Cyan}a_{ij}=\begin{cases}1&\text{if&space;}(v_i,v_j)\text{is&space;an&space;edge&space;in&space;}G,\\0&\text{otherwise.}\end{cases}}">
 3. ### **Incidence Matrix**:
 - Uses the Rectangular Matrix correspoding to Number of Edges and number of vertices.
-- $m_{ij} = \begin{cases} 1 & \text{when edge } e_j \text{ is incident with } v_i, \\ 0 & \text{otherwise.} \end{cases}$
+- <img src="https://latex.codecogs.com/svg.image?\inline&space;{\color{Cyan}m_{ij}=\begin{cases}1&\text{when&space;edge&space;}e_j\text{is&space;incident&space;with&space;}v_i,\\0&\text{otherwise.}\end{cases}}">
 
 
 &nbsp;
