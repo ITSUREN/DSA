@@ -3,7 +3,7 @@
 - The In-Place but not Stable Sorting Algorithm.
 - Sorts by partitioning the Array into a an array with elements lesser than the pivot and on with elements greater than the pivot.
 
-## 🔢 Algorihm.
+## 🔢 Algorithm.
 - The algorithm is as follows:
     1. Start
     2. Choose a Pivot.
@@ -56,6 +56,6 @@ Partition(A, l, r) {
 ```
 
 &nbsp;
-# [Tracing](./QuickSortTracing.md)
+# [Tracing 🚧](./QuickSortTracing.md)
 - <img src="../Resources/QuickSort/QuickSortPass00Step00.svg" width=500px>
-- Given an unsorted array like below, The sorting can be traced as: [Tracing:🧭](./QuickSortTracing.md).
+- Given an unsorted array like below, The sorting can be traced as: [Tracing:🧭 🚧](./QuickSortTracing.md).

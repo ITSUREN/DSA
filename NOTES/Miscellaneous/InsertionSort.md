@@ -20,6 +20,6 @@ InsertionSort(A, n) {
 ```
 
 &nbsp;
-# [Tracing](./InsertionSortTracing.md)
+# [Tracing 🚧](./InsertionSortTracing.md)
 - <img src="../Resources/InsertionSort/InsertionSortPass00Step00.svg" width=500px>
-- Given an unsorted array like below, The sorting can be traced as: [Tracing:🧭](./InsertionSortTracing.md).
+- Given an unsorted array like below, The sorting can be traced as: [Tracing:🧭 🚧](./InsertionSortTracing.md).

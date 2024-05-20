@@ -3,7 +3,7 @@
 - The stable but not In-Place Sorting Algorithm.
 - Sorts by Breaking the Array into smaller blocks until block with single elements and sorts them while merging it back.
 
-## 🔢 Algorihm.
+## 🔢 Algorithm.
 - The algorithm is as follows:
     1. Start
     2. Split the unsorted list into two groups recursively utnil there is one element per group.
@@ -49,6 +49,6 @@ Merge(A, l, m, r) {
 ```
 
 &nbsp;
-# [Tracing](./MergeSortTracing.md)
+# [Tracing 🚧](./MergeSortTracing.md)
 - <img src="../Resources/MergeSort/MergeSortPass00Step00.svg" width=500px>
-- Given an unsorted array like below, The sorting can be traced as: [Tracing:🧭](./MergeSortTracing.md).
+- Given an unsorted array like below, The sorting can be traced as: [Tracing:🧭 🚧](./MergeSortTracing.md).

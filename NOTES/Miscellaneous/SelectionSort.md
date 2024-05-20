@@ -22,6 +22,6 @@ SelectionSort(A, n) {
 ```
 
 &nbsp;
-# [Tracing](./SelectionSortTracing.md)
+# [Tracing 🚧](./SelectionSortTracing.md)
 - <img src="../Resources/SelectionSort/SelectionSortPass00Step00.svg" width=500px>
-- Given an unsorted array like below, The sorting can be traced as: [Tracing:🧭](./SelectionSortTracing.md).
+- Given an unsorted array like below, The sorting can be traced as: [Tracing:🧭 🚧](./SelectionSortTracing.md).
