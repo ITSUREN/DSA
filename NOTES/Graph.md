@@ -54,3 +54,7 @@
 1. ### **[Dijkstra's Algorithm](./Dijkstras.md)**
 2. ### **[A\* Algorithm 🚧](./Astar.md)**
 
+## 🌲 Mimimum Spanning Trees.
+- To find a connected weighted graph with least possible total weights of its edges out of all spanning trees.
+1. ### **[Kruskal's Algorithm 🚧](./KruskalMST.md)**
+2. ### **[Prim's Algorithm 🚧](./PrimsMST.md)**
