@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 
 #define f(x) (pow(x,3) - 10*x - 10)
@@ -29,6 +30,7 @@ void falsePosition(double a, double b) {
 }
 
 int main() {
+    system("clear");
     double a = -10, b = 10;
     falsePosition(a, b);
     return 0;

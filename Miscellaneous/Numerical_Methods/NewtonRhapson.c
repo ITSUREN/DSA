@@ -6,9 +6,9 @@
 #define f(x) (exp(x)-x-2)
 #define f1(x) (exp(x)-1)
 
-int main()
-{   int count=1;
-    float x0,x1;
+int main(){   
+    system("clear");
+    int count=1;float x0,x1;
     printf("Enter the initial guess value: ");
     scanf("%f",&x0);
     if(f1(x0)==0)

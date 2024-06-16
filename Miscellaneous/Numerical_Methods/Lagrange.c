@@ -1,11 +1,11 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<math.h>
 #define MAX 10
 
-int main()
-{ 
-    int n;
-    float x[MAX], f[MAX], sum = 0, pro, xp, fp;
+int main() {
+    system("clear");
+    int n; float x[MAX], f[MAX], sum = 0, pro, xp, fp;
     
     printf("Enter the number of data points: ");
     scanf("%d", &n);
