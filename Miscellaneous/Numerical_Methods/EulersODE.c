@@ -22,6 +22,6 @@ int main() {
         y=y+dy; 
     }
 
-    printf("\nThe value of y at x=%.2f is %.4f ",x,y);
+    printf("\nThe value of y at x=%.2f is %.4f.",x,y);
     return 0;
 }

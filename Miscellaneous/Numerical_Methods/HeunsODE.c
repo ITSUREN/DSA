@@ -22,6 +22,6 @@ int main() {
         x=x+h;
         y=y+(m1+m2)*h/2;
     }
-    printf("\nThe value of y at x=%.2f is %.4f : ",x,y);
+    printf("\nThe value of y at x=%.2f is %.4f.",x,y);
     return 0;
 }
