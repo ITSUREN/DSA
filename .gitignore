@@ -1,16 +1,28 @@
-###########IGNORES###########
 # Ignore all files in the Preliminary_Practices directory
 /Preliminary_Practices/*
+
+# Ignore all files in the Data_Structures directory
 /Data_Structures/*
+
+# Ignore the .vscode directory
+.vscode/
+
 # Ignore Testing purpose Files
 /Tests/*
+
+# Ignore specific file
 logfile.txt
 
+# Exceptions:
 
-##########EXCEPTIONS##########
-# Except for .c files
+# Allow .c files in Preliminary_Practices directory
 !Preliminary_Practices/*.c
+
+# Allow .c files in Data_Structures directory
 !Data_Structures/*.c
-# Except for directories
-!Preliminary_Practices/*/ 
-!Data_Structures/*/ 
+
+# Allow directories inside Preliminary_Practices
+!Preliminary_Practices/*/
+
+# Allow directories inside Data_Structures
+!Data_Structures/*/

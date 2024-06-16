@@ -17,7 +17,6 @@ float bisection(float x1,float x2) {
         if (fabs(f(x0))<Error) {
             return x0;
         } else {
-            x0=(x1+x2)/2;
             if (f(x0)>0) {
                 count++;
                 return bisection(x1,x0);
