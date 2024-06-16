@@ -8,7 +8,7 @@
 
 int main() {
     system("clear");
-    int k,n; float a[MAX][MAX+1], x[MAX], x0[MAX], sum;
+    int k,n;float a[MAX][MAX+1], x[MAX], x0[MAX], sum1, sum2;
 
     // Input the number of unknowns and the augmented matrix
     printf("Enter the number of unknowns: ");
@@ -26,16 +26,17 @@ int main() {
         x0[i] = 0;
     }
 
-    // Jacobi Iteration
+    // Gauss-Seidel Iteration
     for (k = 1; k <= N; k++) {
         for (int i = 0; i < n; i++) {
-            sum = 0;
-            for (int j = 0; j < n; j++) {
-                if (i != j) {
-                    sum += a[i][j] * x0[j];
-                }
+            sum1 = sum2 = 0;
+            for (int j = 0; j < i; j++) {
+                sum1 += a[i][j] * x[j];
             }
-            x[i] = (-sum + a[i][n]) / a[i][i];
+            for (int j = i + 1; j < n; j++) {
+                sum2 += a[i][j] * x0[j];
+            }
+            x[i] = (-sum1 - sum2 + a[i][n]) / a[i][i];
             printf("%.3f\t", x[i]);
         }
         printf("\n");
