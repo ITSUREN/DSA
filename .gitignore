@@ -7,6 +7,10 @@
 # Ignore the .vscode directory
 .vscode/
 
+# Ignore alll files in the Miscellaneous directory
+/Miscellaneous/*
+/Miscellaneous/Numerical_Methods/*
+
 # Ignore Testing purpose Files
 /Tests/*
 
@@ -26,3 +30,9 @@ logfile.txt
 
 # Allow directories inside Data_Structures
 !Data_Structures/*/
+
+# Allow .c files in the miscellaneous Directory
+!Miscellaneous/*.c
+# Allow Directories in the miscellanoues Directory
+!Miscellaneous/*/
+!Miscellaneous/Numerical_Methods/*.c
