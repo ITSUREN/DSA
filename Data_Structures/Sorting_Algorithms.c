@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #define MAXSIZE 50
 
@@ -125,6 +126,41 @@ void QuickSort(int Size, int UnsortedList[MAXSIZE]) {
     ListOutput(Size, SortedList);
 }
 
+int RandomizedQuickPartitioner(int List[MAXSIZE], int Left, int Right) {
+    // Choose a random pivot and swap it with the left element
+    int randomIndex = Left + rand() % (Right - Left + 1);
+    Swap(Left, randomIndex, List);
+
+    int pivot = List[Left];
+    int i = Left + 1;
+    for (int j = Left + 1; j <= Right; j++) {
+        if (List[j] < pivot) {
+            Swap(i, j, List);
+            i++;
+        }
+    }
+    Swap(Left, i - 1, List);
+    return i - 1;
+}
+
+void RandomizedQuickSortInternal(int List[MAXSIZE], int Left, int Right) {
+    if (Left < Right) {
+        int p = RandomizedQuickPartitioner(List, Left, Right);
+        RandomizedQuickSortInternal(List, Left, p - 1);
+        RandomizedQuickSortInternal(List, p + 1, Right);
+    }
+}
+
+void RandomizedQuickSort(int Size, int UnsortedList[MAXSIZE]) {
+    srand(time(NULL)); // Seed random generator
+    int SortedList[MAXSIZE];
+    ListCopy(Size, UnsortedList, SortedList);
+    RandomizedQuickSortInternal(SortedList, 0, Size - 1);
+
+    printf("\nRANDOMIZED QUICK SORT: ");
+    ListOutput(Size, SortedList);
+}
+
 void Merge(int ListA[MAXSIZE], int Left, int Middle, int Right) {
     int ListB[MAXSIZE];
     int x = Left, y = Middle;
@@ -214,4 +250,5 @@ int main() {
     QuickSort(Size, UnsortedList);
     MergeSort(Size, UnsortedList);
     HeapSort(Size, UnsortedList);
+    RandomizedQuickSort(Size, UnsortedList);
 }
